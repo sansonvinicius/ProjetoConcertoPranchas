@@ -7,24 +7,30 @@
         mc:Ignorable="d"
         Title="AddCliente" Height="300" Width="300">
     <Grid>
-        <Label Content="Nome" HorizontalAlignment="Left" Margin="41,37,0,0" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Margin="35,56,0,0" VerticalAlignment="Top">
-            <Label Content="Sobrenome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label Content="Nome:" HorizontalAlignment="Left" Margin="39,19,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+        <Label HorizontalAlignment="Left" Margin="5,55,0,0" VerticalAlignment="Top">
+            <Label Content="Sobrenome:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         </Label>
         <Label HorizontalAlignment="Left" Margin="41,66,0,0" VerticalAlignment="Top"/>
         <Label HorizontalAlignment="Left" Margin="41,66,0,0" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Margin="33,91,0,0" VerticalAlignment="Top">
-            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="46,93,0,0" VerticalAlignment="Top">
+            <Label Content="CPF:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         </Label>
-        <Label HorizontalAlignment="Left" Margin="35,130,0,0" VerticalAlignment="Top">
-            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="33,135,0,0" VerticalAlignment="Top">
+            <Label Content="E-mail:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         </Label>
-        <Label HorizontalAlignment="Left" Margin="35,160,0,0" VerticalAlignment="Top">
-            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="22,174,0,0" VerticalAlignment="Top">
+            <Label Content="Telefone:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         </Label>
-        <Label HorizontalAlignment="Left" Margin="35,184,0,0" VerticalAlignment="Top">
-            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="17,214,0,0" VerticalAlignment="Top">
+            <Label Content="Endereço:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
         </Label>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="102,57,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="103,98,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="104,138,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="102,175,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="103,217,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox HorizontalAlignment="Left" Height="23" Margin="103,18,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
 
     </Grid>
 </Window>
