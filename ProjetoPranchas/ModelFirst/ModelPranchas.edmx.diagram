@@ -5,7 +5,11 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="2a67c5c2610c4e7d9bdad01f147fa048" Name="Diagram1" >
-        <EntityTypeShape EntityType="ModelPranchas.Entity1" Width="1.5" PointX="2.375" PointY="0.875" />
+        <EntityTypeShape EntityType="ModelPranchas.Cliente" Width="1.5" PointX="4.625" PointY="0.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ModelPranchas.Prancha" Width="1.5" PointX="1.75" PointY="0.625" />
+        <EntityTypeShape EntityType="ModelPranchas.Ordem_Servico" Width="1.5" PointX="7.625" PointY="0.75" />
+        <AssociationConnector Association="ModelPranchas.ClientePrancha" />
+        <AssociationConnector Association="ModelPranchas.Ordem_ServicoCliente" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
