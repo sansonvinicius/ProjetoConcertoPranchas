@@ -1,0 +1,30 @@
+﻿<Window x:Class="ConcertosTelas.AddCliente"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConcertosTelas"
+        mc:Ignorable="d"
+        Title="AddCliente" Height="300" Width="300">
+    <Grid>
+        <Label Content="Nome" HorizontalAlignment="Left" Margin="41,37,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="35,56,0,0" VerticalAlignment="Top">
+            <Label Content="Sobrenome" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Label>
+        <Label HorizontalAlignment="Left" Margin="41,66,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="41,66,0,0" VerticalAlignment="Top"/>
+        <Label HorizontalAlignment="Left" Margin="33,91,0,0" VerticalAlignment="Top">
+            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Label>
+        <Label HorizontalAlignment="Left" Margin="35,130,0,0" VerticalAlignment="Top">
+            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Label>
+        <Label HorizontalAlignment="Left" Margin="35,160,0,0" VerticalAlignment="Top">
+            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Label>
+        <Label HorizontalAlignment="Left" Margin="35,184,0,0" VerticalAlignment="Top">
+            <Label Content="Label" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Label>
+
+    </Grid>
+</Window>
