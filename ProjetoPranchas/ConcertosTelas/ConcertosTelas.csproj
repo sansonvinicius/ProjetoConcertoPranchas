@@ -61,7 +61,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="AddCliente.xaml">
+    <Page Include="Views\AddCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -69,7 +69,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Compile Include="AddCliente.xaml.cs">
+    <Compile Include="Views\AddCliente.xaml.cs">
       <DependentUpon>AddCliente.xaml</DependentUpon>
     </Compile>
     <Compile Include="App.xaml.cs">

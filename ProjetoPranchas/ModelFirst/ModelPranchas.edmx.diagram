@@ -10,6 +10,14 @@
         <EntityTypeShape EntityType="ModelPranchas.Ordem_Servico" Width="1.5" PointX="7.625" PointY="0.75" />
         <AssociationConnector Association="ModelPranchas.ClientePrancha" />
         <AssociationConnector Association="ModelPranchas.Ordem_ServicoCliente" />
+        <AssociationConnector Association="ModelPranchas.Ordem_ServicoPrancha" ManuallyRouted="true" >
+          <ConnectorPoint PointX="7.625" PointY="3.3432421874999996" />
+          <ConnectorPoint PointX="7.1485625" PointY="3.3432421874999996" />
+          <ConnectorPoint PointX="7.1485625" PointY="3.9994921875" />
+          <ConnectorPoint PointX="3.4072243749999997" PointY="3.9994921875" />
+          <ConnectorPoint PointX="3.4072243749999997" PointY="3.3432421874999996" />
+          <ConnectorPoint PointX="3.25" PointY="3.3432421874999996" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

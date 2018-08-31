@@ -24,6 +24,10 @@
             <End Role="Ordem_Servico" EntitySet="Ordem_ServicoSet" />
             <End Role="Cliente" EntitySet="ClienteSet" />
           </AssociationSet>
+          <AssociationSet Name="Ordem_ServicoPrancha" Association="ModelPranchas.Ordem_ServicoPrancha">
+            <End Role="Ordem_Servico" EntitySet="Ordem_ServicoSet" />
+            <End Role="Prancha" EntitySet="PranchaSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="Cliente">
           <Key>
@@ -51,6 +55,7 @@
           <Property Name="quilhas" Type="String" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="ModelPranchas.ClientePrancha" FromRole="Prancha" ToRole="Cliente" />
           <Property Name="ClienteId_Cliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Ordem_Servico" Relationship="ModelPranchas.Ordem_ServicoPrancha" FromRole="Prancha" ToRole="Ordem_Servico" />
         </EntityType>
         <EntityType Name="Ordem_Servico">
           <Key>
@@ -64,6 +69,7 @@
           <Property Name="status" Type="String" Nullable="false" />
           <Property Name="situacao" Type="String" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="ModelPranchas.Ordem_ServicoCliente" FromRole="Ordem_Servico" ToRole="Cliente" />
+          <NavigationProperty Name="Prancha" Relationship="ModelPranchas.Ordem_ServicoPrancha" FromRole="Ordem_Servico" ToRole="Prancha" />
         </EntityType>
         <Association Name="ClientePrancha">
           <End Type="ModelPranchas.Cliente" Role="Cliente" Multiplicity="1" />
@@ -80,6 +86,10 @@
         <Association Name="Ordem_ServicoCliente">
           <End Type="ModelPranchas.Ordem_Servico" Role="Ordem_Servico" Multiplicity="*" />
           <End Type="ModelPranchas.Cliente" Role="Cliente" Multiplicity="1" />
+        </Association>
+        <Association Name="Ordem_ServicoPrancha">
+          <End Type="ModelPranchas.Ordem_Servico" Role="Ordem_Servico" Multiplicity="1" />
+          <End Type="ModelPranchas.Prancha" Role="Prancha" Multiplicity="1" />
         </Association>
       </Schema>
     </edmx:ConceptualModels>
