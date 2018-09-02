@@ -13,21 +13,21 @@
                 <MenuItem x:Name="MenuCliente" Header="Cliente">
                     <MenuItem x:Name="AdicCliente" Header="Adicionar" Click="AdicCliente_Click"/>
                     <MenuItem x:Name="EditCliente" Header="Editar"/>
-                    <MenuItem x:Name="ListCliente" Header="Listar"/>
+                    <MenuItem x:Name="ListCliente" Header="Listar" Click="ListCliente_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuPrancha" Header="Prancha">
-                    <MenuItem x:Name="AdicPrancha" Header="Adicionar"/>
+                    <MenuItem x:Name="AdicPrancha" Header="Adicionar" Click="AdicPrancha_Click"/>
                     <MenuItem x:Name="EditPrancha" Header="Editar"/>
                     <MenuItem x:Name="ListPrancha" Header="Listar"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuOS" Header="Ordens de Serviço">
-                    <MenuItem x:Name="AdicOrdem" Header="Adicionar"/>
+                    <MenuItem x:Name="AdicOrdem" Header="Adicionar" Click="AdicOrdem_Click"/>
                     <MenuItem x:Name="EditOrdem" Header="Editar"/>
                     <MenuItem x:Name="ListOrdem" Header="Listar"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuConcertos" Header="Concertos">
                     <MenuItem x:Name="AndamentoConcertos" Header="Andamento"/>
-                    <MenuItem x:Name="HistConcetos" Header="HistóricoConcertos"/>
+                    <MenuItem x:Name="HistConcetos" Header="Histórico dos Concertos"/>
                 </MenuItem>
             </Menu>
 

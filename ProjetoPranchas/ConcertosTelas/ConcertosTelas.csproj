@@ -61,6 +61,19 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Views\ListaClientes.xaml.cs">
+      <DependentUpon>ListaClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TelaAddPrancha.xaml.cs">
+      <DependentUpon>TelaAddPrancha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TelaAddOS.xaml.cs">
+      <DependentUpon>TelaAddOS.xaml</DependentUpon>
+    </Compile>
+    <Page Include="Views\ListaClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\TelaAddCliente.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -80,6 +93,14 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Views\TelaAddPrancha.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TelaAddOS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -112,6 +133,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Views\Oficina.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ModelConcertos\ModelConcertos.csproj">
+      <Project>{32706308-4E53-4AD2-9234-38F3CCE5A6AB}</Project>
+      <Name>ModelConcertos</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

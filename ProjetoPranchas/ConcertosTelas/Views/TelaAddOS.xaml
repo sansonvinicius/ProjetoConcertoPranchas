@@ -1,0 +1,39 @@
+﻿<Window x:Class="ConcertosTelas.Views.TelaAddOS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConcertosTelas.Views"
+        mc:Ignorable="d"
+        Title="TelaAddPrancha" Height="600" Width="300
+        ">
+ 
+        <Viewbox>
+            <Grid Height="500">
+            <Label Content="Ordem de Serviço:" HorizontalAlignment="Left" Margin="52,7,0,0" VerticalAlignment="Top" Height="41" Width="153" FontSize="18"/>
+            <Label Content="Descrição:" HorizontalAlignment="Left" Margin="40,53,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+                <Label Content="Valor:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="52,95,0,0"/>
+                <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
+                <Label Content="Medidas:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="40,133,0,0"/>
+                <Label Content="Entrada:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="42,173,0,0"/>
+                <Label HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top"/>
+                <Label Content="Saída:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" RenderTransformOrigin="0.187,0.557" Margin="44,210,0,0"/>
+                <Label Content="Situação:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="37,249,0,0"/>
+
+                <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="23" Margin="104,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="103,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtEntrada" HorizontalAlignment="Left" Height="23" Margin="104,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtSaida" HorizontalAlignment="Left" Height="23" Margin="105,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtSituacao" HorizontalAlignment="Left" Height="23" Margin="104,251,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtCliente" HorizontalAlignment="Left" Height="23" Margin="103,323,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+                <TextBox x:Name="txtPrancha" HorizontalAlignment="Left" Height="23" Margin="104,288,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
+
+
+            <Button x:Name="btnSalvarPrancha" Content="Salvar" HorizontalAlignment="Left" Margin="69,389,0,0" VerticalAlignment="Top" Width="75"/>
+            <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="167,388,-1,0" VerticalAlignment="Top" Width="75"/>
+            <Label Content="Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="40,288,0,0"/>
+            <Label Content="Prancha" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="41,320,0,0"/>
+        </Grid>
+    </Viewbox>
+</Window>

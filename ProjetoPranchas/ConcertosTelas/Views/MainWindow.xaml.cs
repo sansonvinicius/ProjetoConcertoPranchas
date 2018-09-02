@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConcertosTelas.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -29,6 +30,25 @@ namespace ConcertosTelas
         {
             TelaAddCliente telaAddCliente = new TelaAddCliente();
             telaAddCliente.Show();
+        }
+
+        private void AdicPrancha_Click(object sender, RoutedEventArgs e)
+        {
+            TelaAddPrancha telaAddPrancha = new TelaAddPrancha();
+            telaAddPrancha.Show();
+        }
+
+        private void AdicOrdem_Click(object sender, RoutedEventArgs e)
+        {
+            TelaAddOS telaAddPrancha = new TelaAddOS();
+            telaAddPrancha.Show();
+
+        }
+
+        private void ListCliente_Click(object sender, RoutedEventArgs e)
+        {
+            ListaClientes listaClientes = new ListaClientes();
+            listaClientes.Show();
         }
     }
 }
