@@ -17,9 +17,9 @@ namespace ConcertosTelas
     /// <summary>
     /// Lógica interna para AddCliente.xaml
     /// </summary>
-    public partial class AddCliente : Window
+    public partial class TelaAddCliente : Window
     {
-        public AddCliente()
+        public TelaAddCliente()
         {
             InitializeComponent();
         }

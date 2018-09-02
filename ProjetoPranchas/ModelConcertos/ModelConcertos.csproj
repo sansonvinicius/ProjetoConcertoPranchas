@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B5345DD8-4084-425E-BF4A-5C25FE3E3A45}</ProjectGuid>
+    <ProjectGuid>{32706308-4E53-4AD2-9234-38F3CCE5A6AB}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ModelFirst</RootNamespace>
-    <AssemblyName>ModelFirst</AssemblyName>
+    <RootNamespace>ModelConcertos</RootNamespace>
+    <AssemblyName>ModelConcertos</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -50,23 +50,58 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="ModelPranchas.Designer.cs">
+    <Compile Include="Cliente.cs">
+      <DependentUpon>ModelConcertos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelConcertos.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>ModelPranchas.edmx</DependentUpon>
+      <DependentUpon>ModelConcertos.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelConcertos.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelConcertos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ModelConcertos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ModelConcertos.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="OS.cs">
+      <DependentUpon>ModelConcertos.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Prancha.cs">
+      <DependentUpon>ModelConcertos.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <EntityDeploy Include="ModelPranchas.edmx">
+    <EntityDeploy Include="ModelConcertos.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>ModelPranchas.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelConcertos.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="ModelPranchas.edmx.diagram">
-      <DependentUpon>ModelPranchas.edmx</DependentUpon>
+    <None Include="ModelConcertos.edmx.diagram">
+      <DependentUpon>ModelConcertos.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ModelConcertos.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelConcertos.Context.cs</LastGenOutput>
+      <DependentUpon>ModelConcertos.edmx</DependentUpon>
+    </Content>
+    <Content Include="ModelConcertos.edmx.sql" />
+    <Content Include="ModelConcertos.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>ModelConcertos.cs</LastGenOutput>
+      <DependentUpon>ModelConcertos.edmx</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

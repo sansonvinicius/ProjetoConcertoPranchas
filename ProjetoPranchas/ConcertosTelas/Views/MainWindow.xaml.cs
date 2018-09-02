@@ -24,5 +24,11 @@ namespace ConcertosTelas
         {
             InitializeComponent();
         }
+
+        private void AdicCliente_Click(object sender, RoutedEventArgs e)
+        {
+            TelaAddCliente telaAddCliente = new TelaAddCliente();
+            telaAddCliente.Show();
+        }
     }
 }

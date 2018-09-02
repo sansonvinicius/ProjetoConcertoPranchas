@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConcertosTelas", "ConcertosTelas\ConcertosTelas.csproj", "{3B55E7F2-5A90-44D4-934A-56ED81F7AEE5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelFirst", "ModelFirst\ModelFirst.csproj", "{B5345DD8-4084-425E-BF4A-5C25FE3E3A45}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelConcertos", "ModelConcertos\ModelConcertos.csproj", "{32706308-4E53-4AD2-9234-38F3CCE5A6AB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{3B55E7F2-5A90-44D4-934A-56ED81F7AEE5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3B55E7F2-5A90-44D4-934A-56ED81F7AEE5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3B55E7F2-5A90-44D4-934A-56ED81F7AEE5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B5345DD8-4084-425E-BF4A-5C25FE3E3A45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B5345DD8-4084-425E-BF4A-5C25FE3E3A45}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B5345DD8-4084-425E-BF4A-5C25FE3E3A45}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B5345DD8-4084-425E-BF4A-5C25FE3E3A45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32706308-4E53-4AD2-9234-38F3CCE5A6AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32706308-4E53-4AD2-9234-38F3CCE5A6AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32706308-4E53-4AD2-9234-38F3CCE5A6AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32706308-4E53-4AD2-9234-38F3CCE5A6AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,8 +6,31 @@
         xmlns:local="clr-namespace:ConcertosTelas"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <Menu HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="792"/>
+    <Viewbox>
+        <Grid>
+            <Image Height="450" Width="800" Source="Oficina.jpg" Grid.RowSpan="2"/>
+            <Menu HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="792">
+                <MenuItem x:Name="MenuCliente" Header="Cliente">
+                    <MenuItem x:Name="AdicCliente" Header="Adicionar" Click="AdicCliente_Click"/>
+                    <MenuItem x:Name="EditCliente" Header="Editar"/>
+                    <MenuItem x:Name="ListCliente" Header="Listar"/>
+                </MenuItem>
+                <MenuItem x:Name="MenuPrancha" Header="Prancha">
+                    <MenuItem x:Name="AdicPrancha" Header="Adicionar"/>
+                    <MenuItem x:Name="EditPrancha" Header="Editar"/>
+                    <MenuItem x:Name="ListPrancha" Header="Listar"/>
+                </MenuItem>
+                <MenuItem x:Name="MenuOS" Header="Ordens de Serviço">
+                    <MenuItem x:Name="AdicOrdem" Header="Adicionar"/>
+                    <MenuItem x:Name="EditOrdem" Header="Editar"/>
+                    <MenuItem x:Name="ListOrdem" Header="Listar"/>
+                </MenuItem>
+                <MenuItem x:Name="MenuConcertos" Header="Concertos">
+                    <MenuItem x:Name="AndamentoConcertos" Header="Andamento"/>
+                    <MenuItem x:Name="HistConcetos" Header="HistóricoConcertos"/>
+                </MenuItem>
+            </Menu>
 
-    </Grid>
+        </Grid>
+    </Viewbox>
 </Window>
