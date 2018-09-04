@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ModelConcertos;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,15 +19,25 @@ namespace ConcertosTelas
     /// Lógica interna para AddCliente.xaml
     /// </summary>
     public partial class TelaAddCliente : Window
+
     {
+        ModelConcertosContainer contexto = new ModelConcertosContainer();
+
+
         public TelaAddCliente()
         {
             InitializeComponent();
         }
 
-        private void TextBox_TextChanged(object sender, TextChangedEventArgs e)
+  
+
+        private void btnSalvarCliente_Click(object sender, RoutedEventArgs e)
         {
 
+            
         }
+
+       
+
     }
 }
