@@ -70,6 +70,15 @@
     <Compile Include="Views\TelaAddOS.xaml.cs">
       <DependentUpon>TelaAddOS.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\TelaEditCliente.xaml.cs">
+      <DependentUpon>TelaEditCliente.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TelaEditOS.xaml.cs">
+      <DependentUpon>TelaEditOS.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\TelaEditPrancha.xaml.cs">
+      <DependentUpon>TelaEditPrancha.xaml</DependentUpon>
+    </Compile>
     <Page Include="Views\ListaClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -98,6 +107,18 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TelaAddOS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TelaEditCliente.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TelaEditOS.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\TelaEditPrancha.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
