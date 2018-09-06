@@ -35,7 +35,8 @@
         <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="23" Margin="104,255,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
         <Button x:Name="btnSalvarCliente" Content="Salvar" HorizontalAlignment="Left" Margin="73,293,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="165,293,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="165,293,0,0" VerticalAlignment="Top" Width="75"/>
+        
 
         </Grid>
     </Viewbox>

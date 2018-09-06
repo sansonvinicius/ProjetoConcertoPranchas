@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/02/2018 12:54:30
--- Generated from EDMX file: C:\Users\sanso\Source\Repos\ProjetoConcertoPranchas\ProjetoPranchas\ModelConcertos\ModelConcertos.edmx
+-- Date Created: 09/04/2018 21:39:37
+-- Generated from EDMX file: C:\Users\1618308.EDUC\Source\Repos\ProjetoConcertoPranchas\ProjetoPranchas\ModelConcertos\ModelConcertos.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,11 +17,29 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_PranchaCliente]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PranchaSet] DROP CONSTRAINT [FK_PranchaCliente];
+GO
+IF OBJECT_ID(N'[dbo].[FK_ClienteOS]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[OSSet] DROP CONSTRAINT [FK_ClienteOS];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PranchaOS]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[PranchaSet] DROP CONSTRAINT [FK_PranchaOS];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[PranchaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PranchaSet];
+GO
+IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClienteSet];
+GO
+IF OBJECT_ID(N'[dbo].[OSSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OSSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables

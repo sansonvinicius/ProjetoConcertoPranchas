@@ -61,6 +61,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="ViewsModels\ClienteViewModel.cs" />
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
     </Compile>
@@ -140,5 +142,6 @@
       <Name>ModelConcertos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
