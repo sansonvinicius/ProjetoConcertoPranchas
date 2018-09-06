@@ -62,7 +62,7 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Models\Cliente.cs" />
-    <Compile Include="ViewsModels\ClienteViewModel.cs" />
+    <Compile Include="ViewsModels\AddClienteViewModel.cs" />
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
     </Compile>

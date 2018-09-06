@@ -24,6 +24,7 @@ namespace ConcertosTelas
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void AdicCliente_Click(object sender, RoutedEventArgs e)
@@ -50,5 +51,6 @@ namespace ConcertosTelas
             ListaClientes listaClientes = new ListaClientes();
             listaClientes.Show();
         }
+
     }
 }

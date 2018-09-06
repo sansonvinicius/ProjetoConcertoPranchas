@@ -2,27 +2,32 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace ConcertosTelas.ViewsModels
 {
-    class ClienteViewModel : INotifyPropertyChanged
+    class AddClienteViewModel : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged
         // o evento abaixo é para executação que não depende do software
         public event PropertyChangedEventHandler PropertyChanged;
 
         //metodo vai ser chamado pelo conjunto de sets
-        private void NotifyPropertyChanged(string propertyName)
+        private void NotifyPropertyChanged([CallerMemberName]string propertyName ="")
         {
+            if (PropertyChanged !=null)
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
+    
+  
 
-        #endregion
 
-        #region CamposModelsCliente
-        private int clienteID;
+    #endregion
+
+    #region CamposModelsCliente
+    private int clienteID;
 
         public int ClienteID
         {
