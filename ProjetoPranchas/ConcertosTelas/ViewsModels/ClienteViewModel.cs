@@ -21,6 +21,7 @@ namespace ConcertosTelas.ViewsModels
 
         #endregion
 
+        #region CamposModelsCliente
         private int clienteID;
 
         public int ClienteID
@@ -112,6 +113,7 @@ namespace ConcertosTelas.ViewsModels
             }
         }
 
+        #endregion
 
 
 
