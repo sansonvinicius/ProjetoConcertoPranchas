@@ -1,4 +1,5 @@
-﻿using ConcertosTelas.Views;
+﻿using ConcertosTelas.Models;
+using ConcertosTelas.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,16 @@ namespace ConcertosTelas
         public MainWindow()
         {
             InitializeComponent();
+
         }
 
         private void AdicCliente_Click(object sender, RoutedEventArgs e)
         {
-            TelaAddCliente telaAddCliente = new TelaAddCliente();
-            telaAddCliente.Show();
+            //TelaAddCliente telaAddCliente = new TelaAddCliente();
+           // telaAddCliente.Show();
+
+           TelaAddCliente cad = new TelaAddCliente();
+           cad.Show();
         }
 
         private void AdicPrancha_Click(object sender, RoutedEventArgs e)
@@ -47,8 +52,13 @@ namespace ConcertosTelas
 
         private void ListCliente_Click(object sender, RoutedEventArgs e)
         {
-            ListaClientes listaClientes = new ListaClientes();
-            listaClientes.Show();
+             ListaClientes listaClientes = new ListaClientes();
+             listaClientes.Show();
+
+            //ListaCliente lis = new ListaCliente();
+            //lis.Show();
         }
+
+        
     }
 }

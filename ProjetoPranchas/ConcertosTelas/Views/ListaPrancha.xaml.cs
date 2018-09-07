@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace ConcertosTelas.Views
 {
     /// <summary>
-    /// Lógica interna para TelaEditPrancha.xaml
+    /// Lógica interna para ListaPrancha.xaml
     /// </summary>
-    public partial class TelaEditPrancha : Window
+    public partial class ListaPrancha : Window
     {
-        public TelaEditPrancha()
+        public ListaPrancha()
         {
             InitializeComponent();
         }

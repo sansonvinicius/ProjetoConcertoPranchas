@@ -61,8 +61,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Models\Cliente.cs" />
+    <Compile Include="Models\OS.cs" />
+    <Compile Include="Models\Prancha.cs" />
+    <Compile Include="ViewsModels\AddClienteViewModel.cs" />
+    <Compile Include="ViewsModels\AddOSViewModel.cs" />
+    <Compile Include="ViewsModels\AddPranchaViewModel.cs" />
+    <Compile Include="ViewsModels\ListaClientesViewModel.cs" />
+    <Compile Include="ViewsModels\ListaOSViewModel.cs" />
+    <Compile Include="ViewsModels\ListaPranchaViewModel.cs" />
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListaPrancha.xaml.cs">
+      <DependentUpon>ListaPrancha.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\TelaAddPrancha.xaml.cs">
       <DependentUpon>TelaAddPrancha.xaml</DependentUpon>
@@ -70,16 +82,11 @@
     <Compile Include="Views\TelaAddOS.xaml.cs">
       <DependentUpon>TelaAddOS.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\TelaEditCliente.xaml.cs">
-      <DependentUpon>TelaEditCliente.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TelaEditOS.xaml.cs">
-      <DependentUpon>TelaEditOS.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\TelaEditPrancha.xaml.cs">
-      <DependentUpon>TelaEditPrancha.xaml</DependentUpon>
-    </Compile>
     <Page Include="Views\ListaClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListaPrancha.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -107,18 +114,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\TelaAddOS.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TelaEditCliente.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TelaEditOS.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\TelaEditPrancha.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -161,5 +156,6 @@
       <Name>ModelConcertos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

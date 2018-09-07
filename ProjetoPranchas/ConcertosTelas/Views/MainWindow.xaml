@@ -8,9 +8,14 @@
         Title="MainWindow" Height="450" Width="800">
     <Viewbox>
         <Grid>
-            <Image Height="450" Width="800" Source="Oficina.jpg" Grid.RowSpan="2"/>
-            <Menu HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="792">
-                <MenuItem x:Name="MenuCliente" Header="Cliente">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="73*"/>
+                <ColumnDefinition Width="327*"/>
+                <ColumnDefinition Width="400*"/>
+            </Grid.ColumnDefinitions>
+            <Image Height="450" Width="800" Source="Oficina.jpg" Grid.ColumnSpan="3"/>
+            <Menu HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="3">
+                <MenuItem x:Name="MenuCliente" Header="Cliente" Click="MenuCliente_Click">
                     <MenuItem x:Name="AdicCliente" Header="Adicionar" Click="AdicCliente_Click"/>
                     <MenuItem x:Name="EditCliente" Header="Editar"/>
                     <MenuItem x:Name="ListCliente" Header="Listar" Click="ListCliente_Click"/>

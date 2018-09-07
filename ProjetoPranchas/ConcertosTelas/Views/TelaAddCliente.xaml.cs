@@ -1,4 +1,4 @@
-﻿using ModelConcertos;
+﻿using ConcertosTelas.ViewsModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,25 +19,20 @@ namespace ConcertosTelas
     /// Lógica interna para AddCliente.xaml
     /// </summary>
     public partial class TelaAddCliente : Window
-
     {
-        ModelConcertosContainer contexto = new ModelConcertosContainer();
-
-
         public TelaAddCliente()
         {
             InitializeComponent();
-        }
 
-  
+            AddClienteViewModel vm = new AddClienteViewModel();
+
+            //setup de como a tela deve comunicar
+            DataContext = vm;
+        }
 
         private void btnSalvarCliente_Click(object sender, RoutedEventArgs e)
         {
-
-            
+            AddClienteViewModel cvm = DataContext as AddClienteViewModel;
         }
-
-       
-
     }
 }
