@@ -65,7 +65,11 @@
     <Compile Include="Models\OS.cs" />
     <Compile Include="Models\Prancha.cs" />
     <Compile Include="ViewsModels\AddClienteViewModel.cs" />
+    <Compile Include="ViewsModels\AddOSViewModel.cs" />
+    <Compile Include="ViewsModels\AddPranchaViewModel.cs" />
     <Compile Include="ViewsModels\ListaClientesViewModel.cs" />
+    <Compile Include="ViewsModels\ListaOSViewModel.cs" />
+    <Compile Include="ViewsModels\ListaPranchaViewModel.cs" />
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
     </Compile>
