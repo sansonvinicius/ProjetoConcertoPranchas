@@ -114,7 +114,7 @@ namespace ConcertosTelas.ViewsModels
     }
 }
 
-    {
+    
 
-    }
-}
+    
+

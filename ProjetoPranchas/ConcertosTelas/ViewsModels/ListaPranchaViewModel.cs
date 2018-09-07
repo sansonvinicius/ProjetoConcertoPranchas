@@ -32,7 +32,7 @@ namespace ConcertosTelas.ViewsModels
                     Marca = "",
                     Cor = "",
                     Medida = "",
-                    QtdQuilhas = "",
+                    QtdQuilhas = 0,
                 }
                 );
         }

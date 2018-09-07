@@ -6,8 +6,9 @@
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         mc:Ignorable="d"
         Title="ListaPrancha" Height="450" Width="800">
-  
-        <DataGrid x:Name="dgPranchas" HorizontalAlignment="Left" Height="297" Margin="58,39,0,0" VerticalAlignment="Top" Width="636"/>
+    <Grid>
+
+    <DataGrid x:Name="dgPranchas" HorizontalAlignment="Left" Height="297" Margin="58,39,0,0" VerticalAlignment="Top" Width="636"
         ItemsSource="{Binding Pranchas}">
         <DataGrid.Columns>
             <DataGridTextColumn Header="ID" Binding="{Binding PranchaID}"/>
@@ -16,8 +17,9 @@
             <DataGridTextColumn Header="Cor" Binding="{Binding Cor}"/>
             <DataGridTextColumn Header="Medida" Binding="{Binding Medida}"/>
             <DataGridTextColumn Header="QtdQuilhas" Binding="{Binding QtdQuilhas}"/>
-        </DataGrid.Columns>    
-  
+        </DataGrid.Columns>
+    </DataGrid>
+    </Grid>
 </Window>
 
     

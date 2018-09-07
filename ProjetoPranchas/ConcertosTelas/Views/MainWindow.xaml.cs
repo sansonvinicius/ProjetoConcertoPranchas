@@ -59,6 +59,9 @@ namespace ConcertosTelas
             //lis.Show();
         }
 
-        
+        private void MenuCliente_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

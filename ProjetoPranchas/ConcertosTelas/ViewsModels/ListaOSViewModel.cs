@@ -31,9 +31,9 @@ namespace ConcertosTelas.ViewsModels
                     Descricao = "",
                     Situacao = "",
                     Status = "",
-                    Valor = "",
-                    DataEntrada = "",
-                    DataSaida = "",
+                    Valor = 0,
+                    DataEntrada = DateTime.Today,
+                    DataSaida = DateTime.Today,
                 }
                 );
         }
