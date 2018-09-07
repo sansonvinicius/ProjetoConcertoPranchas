@@ -29,8 +29,11 @@ namespace ConcertosTelas
 
         private void AdicCliente_Click(object sender, RoutedEventArgs e)
         {
-            TelaAddCliente telaAddCliente = new TelaAddCliente();
-            telaAddCliente.Show();
+            //TelaAddCliente telaAddCliente = new TelaAddCliente();
+            //telaAddCliente.Show();
+
+            AddCliente cad = new AddCliente();
+            cad.Show();
         }
 
         private void AdicPrancha_Click(object sender, RoutedEventArgs e)
