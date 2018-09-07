@@ -73,6 +73,9 @@
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\ListaPrancha.xaml.cs">
+      <DependentUpon>ListaPrancha.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\TelaAddPrancha.xaml.cs">
       <DependentUpon>TelaAddPrancha.xaml</DependentUpon>
     </Compile>
@@ -80,6 +83,10 @@
       <DependentUpon>TelaAddOS.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\ListaClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListaPrancha.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
