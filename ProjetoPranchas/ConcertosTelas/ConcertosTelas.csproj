@@ -61,17 +61,26 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Models\Cliente.cs" />
-    <Compile Include="Models\OS.cs" />
-    <Compile Include="Models\Prancha.cs" />
+    <Compile Include="Comandos\AdicionarOS .cs" />
+    <Compile Include="Comandos\AdicionarCliente .cs" />
+    <Compile Include="Comandos\AdicionarPrancha.cs" />
+    <Compile Include="Comandos\DeletarCliente .cs" />
+    <Compile Include="Comandos\DeletarOS.cs" />
+    <Compile Include="Comandos\DeletarPrancha.cs" />
+    <Compile Include="Comandos\EditarCliente.cs" />
+    <Compile Include="Comandos\EditarOS.cs" />
+    <Compile Include="Comandos\EditarPrancha.cs" />
+    <Compile Include="ViewsModels\BaseNotifyPropertyChanged.cs" />
+    <Compile Include="Comandos\Comandos.cs" />
     <Compile Include="ViewsModels\AddClienteViewModel.cs" />
-    <Compile Include="ViewsModels\AddOSViewModel.cs" />
-    <Compile Include="ViewsModels\AddPranchaViewModel.cs" />
-    <Compile Include="ViewsModels\ListaClientesViewModel.cs" />
-    <Compile Include="ViewsModels\ListaOSViewModel.cs" />
-    <Compile Include="ViewsModels\ListaPranchaViewModel.cs" />
+    <Compile Include="ViewsModels\ClienteViewModel.cs" />
+    <Compile Include="ViewsModels\OSViewModel.cs" />
+    <Compile Include="ViewsModels\PranchaViewModel.cs" />
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ListaOS.xaml.cs">
+      <DependentUpon>ListaOS.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\ListaPrancha.xaml.cs">
       <DependentUpon>ListaPrancha.xaml</DependentUpon>
@@ -83,6 +92,10 @@
       <DependentUpon>TelaAddOS.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\ListaClientes.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ListaOS.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -152,10 +165,9 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ModelConcertos\ModelConcertos.csproj">
-      <Project>{32706308-4E53-4AD2-9234-38F3CCE5A6AB}</Project>
+      <Project>{60d51cb7-d305-41d5-b8c6-fb970d9bdbf9}</Project>
       <Name>ModelConcertos</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

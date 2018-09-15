@@ -1,4 +1,5 @@
-﻿using ModelConcertos;
+﻿using ConcertosTelas.ViewsModels;
+using ModelConcertosEntity;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity.Core.Objects;
@@ -21,25 +22,26 @@ namespace ConcertosTelas.Views
     /// </summary>
     public partial class ListaClientes : Window
     {
-        ModelConcertosContainer contexto = new ModelConcertosContainer();
 
         public ListaClientes()
         {
             InitializeComponent();
+            DataContext = new ClienteViewModel();
         }
 
 
-        private void Window_Loaded(object sender, RoutedEventArgs e)
+        /*private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-            List<Cliente> ListarTodosClientes()
+           // List<Cliente> ListarTodosClientes()
             {
 
-                return contexto.ClienteSet.ToList();
+                //return contexto.ClienteSet.ToList();
             }
 
-            DataGridClientes.ItemsSource = ListarTodosClientes().ToList();
+          //  DataGridClientes.ItemsSource = ListarTodosClientes().ToList();
         }
+    }*/
     }
 }
 

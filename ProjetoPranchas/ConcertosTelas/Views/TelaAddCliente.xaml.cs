@@ -24,15 +24,20 @@ namespace ConcertosTelas
         {
             InitializeComponent();
 
-            AddClienteViewModel vm = new AddClienteViewModel();
-
-            //setup de como a tela deve comunicar
-            DataContext = vm;
+         
         }
 
         private void btnSalvarCliente_Click(object sender, RoutedEventArgs e)
         {
-            AddClienteViewModel cvm = DataContext as AddClienteViewModel;
+            AdicionarCliente cvm = DataContext as AdicionarCliente;
+            DialogResult = true;
+        }
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            TelaAddCliente Voltar = new TelaAddCliente();
+            this.Close();
         }
     }
 }
+

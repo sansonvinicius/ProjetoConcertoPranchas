@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="ModelConcertosEntity.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ClienteSet">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Sobrenome" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cpf" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Telefone" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Endereco" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <EntityType Name="OSSet">
+          <Key>
+            <PropertyRef Name="Id_OS" />
+          </Key>
+          <Property Name="Id_OS" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Descricao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Valor" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data_Entrada" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Data_Saida" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Status" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Situacao" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="ClienteId_Cliente" Type="int" Nullable="false" />
+          <Property Name="PranchaId_Prancha" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PranchaSet">
+          <Key>
+            <PropertyRef Name="Id_Prancha" />
+          </Key>
+          <Property Name="Id_Prancha" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Marca" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Modelo" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Cor" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="QtdQuilhas" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Medida" Type="nvarchar(max)" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_ClienteOS">
+          <End Role="ClienteSet" Type="Self.ClienteSet" Multiplicity="1" />
+          <End Role="OSSet" Type="Self.OSSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ClienteSet">
+              <PropertyRef Name="Id_Cliente" />
+            </Principal>
+            <Dependent Role="OSSet">
+              <PropertyRef Name="ClienteId_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_PranchaOS">
+          <End Role="PranchaSet" Type="Self.PranchaSet" Multiplicity="1" />
+          <End Role="OSSet" Type="Self.OSSet" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PranchaSet">
+              <PropertyRef Name="Id_Prancha" />
+            </Principal>
+            <Dependent Role="OSSet">
+              <PropertyRef Name="PranchaId_Prancha" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="ModelConcertosEntityStoreContainer">
+          <EntitySet Name="ClienteSet" EntityType="Self.ClienteSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="OSSet" EntityType="Self.OSSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PranchaSet" EntityType="Self.PranchaSet" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ClienteOS" Association="Self.FK_ClienteOS">
+            <End Role="ClienteSet" EntitySet="ClienteSet" />
+            <End Role="OSSet" EntitySet="OSSet" />
+          </AssociationSet>
+          <AssociationSet Name="FK_PranchaOS" Association="Self.FK_PranchaOS">
+            <End Role="PranchaSet" EntitySet="PranchaSet" />
+            <End Role="OSSet" EntitySet="OSSet" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="ModelConcertosEntity" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" annotation:UseStrongSpatialTypes="false">
+        <EntityContainer Name="ModelConcertosEntityContainer" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="PranchaSet" EntityType="ModelConcertosEntity.Prancha" />
+          <EntitySet Name="ClienteSet" EntityType="ModelConcertosEntity.Cliente" />
+          <EntitySet Name="OSSet" EntityType="ModelConcertosEntity.OS" />
+          <AssociationSet Name="ClienteOS" Association="ModelConcertosEntity.ClienteOS">
+            <End Role="Cliente" EntitySet="ClienteSet" />
+            <End Role="OS" EntitySet="OSSet" />
+          </AssociationSet>
+          <AssociationSet Name="PranchaOS" Association="ModelConcertosEntity.PranchaOS">
+            <End Role="Prancha" EntitySet="PranchaSet" />
+            <End Role="OS" EntitySet="OSSet" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Prancha">
+          <Key>
+            <PropertyRef Name="Id_Prancha" />
+          </Key>
+          <Property Name="Id_Prancha" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Marca" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Modelo" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cor" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="QtdQuilhas" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Medida" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="OS" Relationship="ModelConcertosEntity.PranchaOS" FromRole="Prancha" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="Cliente">
+          <Key>
+            <PropertyRef Name="Id_Cliente" />
+          </Key>
+          <Property Name="Id_Cliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Sobrenome" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Cpf" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Telefone" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Endereco" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="OS" Relationship="ModelConcertosEntity.ClienteOS" FromRole="Cliente" ToRole="OS" />
+        </EntityType>
+        <EntityType Name="OS">
+          <Key>
+            <PropertyRef Name="Id_OS" />
+          </Key>
+          <Property Name="Id_OS" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Descricao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Valor" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Data_Entrada" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Data_Saida" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Status" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <Property Name="Situacao" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Cliente" Relationship="ModelConcertosEntity.ClienteOS" FromRole="OS" ToRole="Cliente" />
+          <Property Name="ClienteId_Cliente" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Prancha" Relationship="ModelConcertosEntity.PranchaOS" FromRole="OS" ToRole="Prancha" />
+          <Property Name="PranchaId_Prancha" Type="Int32" Nullable="false" />
+        </EntityType>
+        <Association Name="ClienteOS">
+          <End Type="ModelConcertosEntity.Cliente" Role="Cliente" Multiplicity="1" />
+          <End Type="ModelConcertosEntity.OS" Role="OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Cliente">
+              <PropertyRef Name="Id_Cliente" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="ClienteId_Cliente" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="PranchaOS">
+          <End Type="ModelConcertosEntity.Prancha" Role="Prancha" Multiplicity="1" />
+          <End Type="ModelConcertosEntity.OS" Role="OS" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Prancha">
+              <PropertyRef Name="Id_Prancha" />
+            </Principal>
+            <Dependent Role="OS">
+              <PropertyRef Name="PranchaId_Prancha" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="ModelConcertosEntityStoreContainer" CdmEntityContainer="ModelConcertosEntityContainer">
+    <EntitySetMapping Name="PranchaSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelConcertosEntity.Prancha)">
+        <MappingFragment StoreEntitySet="PranchaSet">
+          <ScalarProperty Name="Id_Prancha" ColumnName="Id_Prancha" />
+          <ScalarProperty Name="Marca" ColumnName="Marca" />
+          <ScalarProperty Name="Modelo" ColumnName="Modelo" />
+          <ScalarProperty Name="Cor" ColumnName="Cor" />
+          <ScalarProperty Name="QtdQuilhas" ColumnName="QtdQuilhas" />
+          <ScalarProperty Name="Medida" ColumnName="Medida" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ClienteSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelConcertosEntity.Cliente)">
+        <MappingFragment StoreEntitySet="ClienteSet">
+          <ScalarProperty Name="Id_Cliente" ColumnName="Id_Cliente" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OSSet">
+      <EntityTypeMapping TypeName="IsTypeOf(ModelConcertosEntity.OS)">
+        <MappingFragment StoreEntitySet="OSSet">
+          <ScalarProperty Name="Id_OS" ColumnName="Id_OS" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Valor" ColumnName="Valor" />
+          <ScalarProperty Name="Data_Entrada" ColumnName="Data_Entrada" />
+          <ScalarProperty Name="Data_Saida" ColumnName="Data_Saida" />
+          <ScalarProperty Name="Status" ColumnName="Status" />
+          <ScalarProperty Name="Situacao" ColumnName="Situacao" />
+          <ScalarProperty Name="ClienteId_Cliente" ColumnName="ClienteId_Cliente" />
+          <ScalarProperty Name="PranchaId_Prancha" ColumnName="PranchaId_Prancha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <edmx:Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </edmx:Connection>
+    <edmx:Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="False" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+      </DesignerInfoPropertySet>
+    </edmx:Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

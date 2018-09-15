@@ -1,5 +1,4 @@
 ﻿using ConcertosTelas.ViewsModels;
-using ModelConcertosEntity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,14 +16,14 @@ using System.Windows.Shapes;
 namespace ConcertosTelas.Views
 {
     /// <summary>
-    /// Lógica interna para ListaPrancha.xaml
+    /// Lógica interna para ListaOS.xaml
     /// </summary>
-    public partial class ListaPrancha : Window
+    public partial class ListaOS : Window
     {
-        public ListaPrancha()
+        public ListaOS()
         {
             InitializeComponent();
-            DataContext = new PranchaViewModel();
+            DataContext = new OSViewModel();
 
         }
     }

@@ -23,5 +23,16 @@ namespace ConcertosTelas.Views
         {
             InitializeComponent();
         }
+        private void btnSalvarOS_Click(object sender, RoutedEventArgs e)
+        {
+            AdicionarOS cvm = DataContext as AdicionarOS;
+            DialogResult = true;
+        }
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            TelaAddOS Voltar = new TelaAddOS();
+            this.Close();
+        }
     }
 }
+

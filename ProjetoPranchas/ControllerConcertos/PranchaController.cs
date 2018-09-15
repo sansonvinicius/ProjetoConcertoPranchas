@@ -1,12 +1,16 @@
-﻿using System;
+﻿
+using ModelConcertosEntity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ModelConcertosEntity
+namespace ControllerConcertos
 {
-    public class Class1
+    class PranchaController
     {
+    
+
     }
 }

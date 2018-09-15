@@ -1,0 +1,41 @@
+﻿<Window x:Class="ConcertosTelas.Views.ListaOS"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ConcertosTelas.Views"
+        mc:Ignorable="d"
+        Title="ListaOS" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="3" Padding="3" Content="Novo" CommandParameter="{Binding}" Command="{Binding AdicionarOS}" />
+            <Button Margin="3" Padding="3" Content="Editar" CommandParameter="{Binding}" Command="{Binding EditarOS}"/>
+            <Button Margin="3" Padding="3" Content="Deletar" CommandParameter="{Binding}" Command="{Binding DeletarOS}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1"
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Hidden">
+            <DataGrid   ItemsSource="{Binding OSs}"
+                        AutoGenerateColumns="False"
+                        IsReadOnly="True"
+                         SelectedItem="{Binding OSSelecionada}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id_OS}"/>
+                    <DataGridTextColumn Header="Descricao" Binding="{Binding Descricao}"/>
+                    <DataGridTextColumn Header="Valor" Binding="{Binding Valor}"/>
+                    <DataGridTextColumn Header="Entrada" Binding="{Binding Data_Entrada}"/>
+                    <DataGridTextColumn Header="Saida" Binding="{Binding Data_Saida}"/>
+                    <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
+                    <DataGridTextColumn Header="Situacao" Binding="{Binding Situacao}"/>
+                    <DataGridTextColumn Header="Cliente" Binding="{Binding Cliente}"/>
+                    <DataGridTextColumn Header="Prancha" Binding="{Binding Prancha}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </ScrollViewer>
+    </Grid>
+</Window>

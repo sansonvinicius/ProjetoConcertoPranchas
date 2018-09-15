@@ -1,4 +1,4 @@
-﻿using ConcertosTelas.Models;
+﻿using ModelConcertosEntity;
 using ConcertosTelas.Views;
 using System;
 using System.Collections.Generic;
@@ -28,27 +28,6 @@ namespace ConcertosTelas
 
         }
 
-        private void AdicCliente_Click(object sender, RoutedEventArgs e)
-        {
-            //TelaAddCliente telaAddCliente = new TelaAddCliente();
-           // telaAddCliente.Show();
-
-           TelaAddCliente cad = new TelaAddCliente();
-           cad.Show();
-        }
-
-        private void AdicPrancha_Click(object sender, RoutedEventArgs e)
-        {
-            TelaAddPrancha telaAddPrancha = new TelaAddPrancha();
-            telaAddPrancha.Show();
-        }
-
-        private void AdicOrdem_Click(object sender, RoutedEventArgs e)
-        {
-            TelaAddOS telaAddPrancha = new TelaAddOS();
-            telaAddPrancha.Show();
-
-        }
 
         private void ListCliente_Click(object sender, RoutedEventArgs e)
         {
@@ -59,9 +38,27 @@ namespace ConcertosTelas
             //lis.Show();
         }
 
-        private void MenuCliente_Click(object sender, RoutedEventArgs e)
+
+        private void ListPrancha_Click(object sender, RoutedEventArgs e)
         {
+            ListaPrancha listaPrancha = new ListaPrancha();
+            listaPrancha.Show();
 
         }
+
+
+        private void ListOS_Click(object sender, RoutedEventArgs e)
+        {
+            ListaOS listaOS = new ListaOS();
+            listaOS.Show();
+
+        }
+
+        private void MenuCliente_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+
     }
 }

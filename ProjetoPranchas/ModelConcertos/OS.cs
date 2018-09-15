@@ -7,23 +7,83 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelConcertos
+namespace ModelConcertosEntity
 {
+    using global::ModelConcertosEntity;
     using System;
     using System.Collections.Generic;
     
-    public partial class OS
+    public partial class OS : BaseNotifyPropertyChanged, ICloneable
     {
-        public int Id_OS { get; set; }
-        public string Descricao { get; set; }
-        public decimal Valor { get; set; }
-        public System.DateTime Data_Entrada { get; set; }
-        public System.DateTime Data_Saida { get; set; }
-        public string Status { get; set; }
-        public string Situacao { get; set; }
-        public int ClienteId_Cliente { get; set; }
-    
+
+        private int _Id_OS;
+        public int Id_OS
+        {
+            get { return _Id_OS; }
+            set { SetField(ref _Id_OS, value); }
+        }
+
+        private string _Descricao;
+        public string Descricao
+        {
+            get { return _Descricao; }
+            set { SetField(ref _Descricao, value); }
+        }
+
+        private string _Valor;
+        public string Valor
+        {
+            get { return _Valor; }
+            set { SetField(ref _Valor, value); }
+        }
+
+        private string _Data_Entrada;
+        public string Data_Entrada
+        {
+            get { return _Data_Entrada; }
+            set { SetField(ref _Data_Entrada, value); }
+        }
+
+        private string _Data_Saida;
+        public string Data_Saida
+        {
+            get { return _Data_Saida; }
+            set { SetField(ref  _Data_Saida, value); }
+        }
+
+        private string _Status;
+        public string Status
+        {
+            get { return _Status; }
+            set { SetField(ref _Status, value); }
+        }
+
+        private string _Situacao;
+        public string Situacao
+        {
+            get { return _Situacao; }
+            set { SetField(ref _Situacao, value); }
+        }
+
+
+
+
+        /* public int Id_OS { get; set; }
+         public string Descricao { get; set; }
+         public string Valor { get; set; }
+         public string Data_Entrada { get; set; }
+         public string Data_Saida { get; set; }
+         public string Status { get; set; }
+         public string Situacao { get; set; }
+         public int ClienteId_Cliente { get; set; }
+         public int PranchaId_Prancha { get; set; }*/
+
         public virtual Cliente Cliente { get; set; }
         public virtual Prancha Prancha { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }

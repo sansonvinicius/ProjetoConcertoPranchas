@@ -7,31 +7,88 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelConcertos
+namespace ModelConcertosEntity
 {
+    using global::ModelConcertosEntity;
     using System;
     using System.Collections.Generic;
-    
-    public partial class Cliente
+
+    public class Cliente : BaseNotifyPropertyChanged, ICloneable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cliente()
         {
-            this.Prancha = new HashSet<Prancha>();
             this.OS = new HashSet<OS>();
         }
-    
-        public int Id_Cliente { get; set; }
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public string Email { get; set; }
-        public string Cpf { get; set; }
-        public string Telefone { get; set; }
-        public string Endereco { get; set; }
-    
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Prancha> Prancha { get; set; }
+
+        private int _Id_Cliente;
+        public int Id_Cliente
+        {
+            get { return _Id_Cliente; }
+            set { SetField(ref _Id_Cliente, value); }
+        }
+
+        private string _Nome;
+        public string Nome
+        {
+            get { return _Nome; }
+            set { SetField(ref _Nome, value); }
+        }
+
+        private string _Sobrenome;
+        public string Sobrenome
+        {
+            get { return _Sobrenome; }
+            set { SetField(ref _Sobrenome, value); }
+        }
+
+        private string _Email;
+        public string Email
+        {
+            get { return _Email; }
+            set { SetField(ref _Email, value); }
+        }
+
+        private string _Cpf;
+        public string Cpf
+        {
+            get { return _Cpf; }
+            set { SetField(ref _Cpf, value); }
+        }
+
+        private string _Telefone;
+        public string Telefone
+        {
+            get { return _Telefone; }
+            set { SetField(ref _Telefone, value); }
+        }
+
+        private string _Endereco;
+        public string Endereco
+        {
+            get { return _Endereco; }
+            set { SetField(ref _Endereco, value); }
+        }
+
+
+        /* public int Id_Cliente { get; set; }
+         public string Nome { get; set; }
+         public string Sobrenome { get; set; }
+         public string Email { get; set; }
+         public string Cpf { get; set; }
+         public string Telefone { get; set; }
+         public string Endereco { get; set; }*/
+
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OS> OS { get; set; }
+
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
     }
 }
+
+   
+
+

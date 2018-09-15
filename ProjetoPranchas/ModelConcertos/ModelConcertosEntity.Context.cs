@@ -9,14 +9,15 @@
 
 namespace ModelConcertos
 {
+    using ModelConcertosEntity;
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class ModelConcertosContainer : DbContext
+    public partial class ModelConcertosEntityContainer : DbContext
     {
-        public ModelConcertosContainer()
-            : base("name=ModelConcertosContainer")
+        public ModelConcertosEntityContainer()
+            : base("name=ModelConcertosEntityContainer")
         {
         }
     

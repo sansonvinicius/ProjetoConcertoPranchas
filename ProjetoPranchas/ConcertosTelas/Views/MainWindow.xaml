@@ -16,19 +16,13 @@
             <Image Height="450" Width="800" Source="Oficina.jpg" Grid.ColumnSpan="3"/>
             <Menu HorizontalAlignment="Left" Height="27" VerticalAlignment="Top" Width="792" Grid.ColumnSpan="3">
             <MenuItem x:Name="MenuCliente" Header="Cliente" Click="MenuCliente_Click">
-                    <MenuItem x:Name="AdicCliente" Header="Adicionar" Click="AdicCliente_Click"/>
-                    <MenuItem x:Name="EditCliente" Header="Editar"/>
                     <MenuItem x:Name="ListCliente" Header="Listar" Click="ListCliente_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuPrancha" Header="Prancha">
-                    <MenuItem x:Name="AdicPrancha" Header="Adicionar" Click="AdicPrancha_Click"/>
-                    <MenuItem x:Name="EditPrancha" Header="Editar"/>
-                    <MenuItem x:Name="ListPrancha" Header="Listar"/>
+                    <MenuItem x:Name="ListPrancha" Header="Listar" Click="ListPrancha_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuOS" Header="Ordens de Serviço">
-                    <MenuItem x:Name="AdicOrdem" Header="Adicionar" Click="AdicOrdem_Click"/>
-                    <MenuItem x:Name="EditOrdem" Header="Editar"/>
-                    <MenuItem x:Name="ListOrdem" Header="Listar"/>
+                    <MenuItem x:Name="ListOrdem" Header="Listar"  Click="ListOS_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuConcertos" Header="Concertos">
                     <MenuItem x:Name="AndamentoConcertos" Header="Andamento"/>

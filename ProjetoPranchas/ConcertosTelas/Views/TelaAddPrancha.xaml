@@ -8,7 +8,7 @@
         Title="TelaAddOS" Height="450" Width="800">
     <Viewbox>
         <Grid>
-            <Label Content="Prancha:" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Height="41" Width="153" FontSize="20"/>
+            <Label Content="Prancha:" HorizontalAlignment="Left" Margin="105,10,0,0" VerticalAlignment="Top" Height="41" Width="153" FontSize="20" />
             <Label Content="Modelo:" HorizontalAlignment="Left" Margin="40,57,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
             <Label Content="Marca:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="42,95,0,0"/>
             <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
@@ -16,16 +16,14 @@
             <Label Content="Cor:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="46,176,0,0"/>
             <Label HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top"/>
             <Label Content="Qtde Quilhas:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" RenderTransformOrigin="0.187,0.557" Margin="12,210,0,0"/>
-            <Label Content="Cliente:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="38,252,0,0"/>
-            <TextBox x:Name="txtModelo" HorizontalAlignment="Left" Height="23" Margin="104,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtMarca" HorizontalAlignment="Left" Height="23" Margin="103,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtMedida" HorizontalAlignment="Left" Height="23" Margin="104,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtCor" HorizontalAlignment="Left" Height="23" Margin="105,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-            <TextBox x:Name="txtQtdeQuilhas" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"/>
-            <Button x:Name="btnSalvarPrancha" Content="Salvar" HorizontalAlignment="Left" Margin="73,293,0,0" VerticalAlignment="Top" Width="75"/>
-            <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="173,293,0,0" VerticalAlignment="Top" Width="75"/>
-            <ComboBox HorizontalAlignment="Left" Margin="105,252,0,0" VerticalAlignment="Top" Width="120">
-            </ComboBox>
+            <TextBox x:Name="txtModelo" HorizontalAlignment="Left" Height="23" Margin="104,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Modelo}" />
+            <TextBox x:Name="txtMarca" HorizontalAlignment="Left" Height="23" Margin="103,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120"  Text="{Binding Marca}" />
+            <TextBox x:Name="txtMedida" HorizontalAlignment="Left" Height="23" Margin="104,136,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Text="{Binding Medida}" />
+            <TextBox x:Name="txtCor" HorizontalAlignment="Left" Height="23" Margin="105,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Cor}" />
+            <TextBox x:Name="txtQtdeQuilhas" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding QtdQuilhas}" />
+            <Button x:Name="btnSalvarPrancha"  HorizontalAlignment="Left" Margin="73,293,0,0" VerticalAlignment="Top" Width="75" Click="btnSalvarPrancha_Click" CommandParameter="{Binding}" Command="{Binding AdicionarPrancha}" Content="Adicionar"/>
+            <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="173,293,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click" />
+            
         </Grid>
     </Viewbox>
 </Window>

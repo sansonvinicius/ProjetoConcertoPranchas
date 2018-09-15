@@ -5,21 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         mc:Ignorable="d"
-        Title="ListaPrancha" Height="450" Width="800">
-    <Grid>
+        Title="ListaPrancha" Height="350" Width="800">
 
-    <DataGrid x:Name="dgPranchas" HorizontalAlignment="Left" Height="297" Margin="58,39,0,0" VerticalAlignment="Top" Width="636"
-        ItemsSource="{Binding Pranchas}">
-        <DataGrid.Columns>
-            <DataGridTextColumn Header="ID" Binding="{Binding PranchaID}"/>
-            <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
-            <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo}"/>
-            <DataGridTextColumn Header="Cor" Binding="{Binding Cor}"/>
-            <DataGridTextColumn Header="Medida" Binding="{Binding Medida}"/>
-            <DataGridTextColumn Header="QtdQuilhas" Binding="{Binding QtdQuilhas}"/>
-        </DataGrid.Columns>
-    </DataGrid>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="3" Padding="3" Content="Novo" CommandParameter="{Binding}" Command="{Binding AdicionarPrancha}" />
+            <Button Margin="3" Padding="3" Content="Editar" CommandParameter="{Binding}" Command="{Binding EditarPrancha}"/>
+            <Button Margin="3" Padding="3" Content="Deletar" CommandParameter="{Binding}" Command="{Binding DeletarPrancha}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1"
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Hidden">
+            <DataGrid   ItemsSource="{Binding Pranchas}"
+                        AutoGenerateColumns="False"
+                        IsReadOnly="True"
+                         SelectedItem="{Binding PranchaSelecionada}" IsSynchronizedWithCurrentItem="False">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id_Prancha}"/>
+                    <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>
+                    <DataGridTextColumn Header="Modelo" Binding="{Binding Modelo}"/>
+                    <DataGridTextColumn Header="Cor" Binding="{Binding Cor}"/>
+                    <DataGridTextColumn Header="Medida" Binding="{Binding Medida}"/>
+                    <DataGridTextColumn Header="QtdQuilhas" Binding="{Binding QtdQuilhas}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </ScrollViewer>
     </Grid>
 </Window>
+
 
     

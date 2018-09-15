@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
@@ -10,6 +11,10 @@ namespace ConcertosTelas.ViewsModels
 {
     class AddPranchaViewModel : INotifyPropertyChanged
     {
+  
+
+
+
         #region INotifyPropertyChanged
         // o evento abaixo é para executação que não depende do software
         public event PropertyChangedEventHandler PropertyChanged;
@@ -25,7 +30,7 @@ namespace ConcertosTelas.ViewsModels
 
 
         #endregion
-
+        /*
         #region CamposModelsPrancha
         private int pranchaID;
 
@@ -106,7 +111,11 @@ namespace ConcertosTelas.ViewsModels
         }
 
         
-        #endregion
+        #endregion */
+
+      
+
+
 
 
 

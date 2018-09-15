@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/04/2018 21:39:37
--- Generated from EDMX file: C:\Users\1618308.EDUC\Source\Repos\ProjetoConcertoPranchas\ProjetoPranchas\ModelConcertos\ModelConcertos.edmx
+-- Date Created: 09/15/2018 12:14:43
+-- Generated from EDMX file: C:\Users\sanso\Source\Repos\ProjetoConcertoPranchas\ProjetoPranchas\ModelConcertos\ModelConcertosEntity.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,29 +17,11 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_PranchaCliente]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PranchaSet] DROP CONSTRAINT [FK_PranchaCliente];
-GO
-IF OBJECT_ID(N'[dbo].[FK_ClienteOS]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[OSSet] DROP CONSTRAINT [FK_ClienteOS];
-GO
-IF OBJECT_ID(N'[dbo].[FK_PranchaOS]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[PranchaSet] DROP CONSTRAINT [FK_PranchaOS];
-GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[PranchaSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[PranchaSet];
-GO
-IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ClienteSet];
-GO
-IF OBJECT_ID(N'[dbo].[OSSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[OSSet];
-GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -48,13 +30,11 @@ GO
 -- Creating table 'PranchaSet'
 CREATE TABLE [dbo].[PranchaSet] (
     [Id_Prancha] int IDENTITY(1,1) NOT NULL,
-    [Modelo] nvarchar(max)  NOT NULL,
     [Marca] nvarchar(max)  NOT NULL,
-    [Medida] nvarchar(max)  NOT NULL,
+    [Modelo] nvarchar(max)  NOT NULL,
     [Cor] nvarchar(max)  NOT NULL,
-    [QtdQuilhas] int  NOT NULL,
-    [Cliente_Id_Cliente] int  NOT NULL,
-    [OS_Id_OS] int  NOT NULL
+    [QtdQuilhas] nvarchar(max)  NOT NULL,
+    [Medida] nvarchar(max)  NOT NULL
 );
 GO
 
@@ -74,12 +54,13 @@ GO
 CREATE TABLE [dbo].[OSSet] (
     [Id_OS] int IDENTITY(1,1) NOT NULL,
     [Descricao] nvarchar(max)  NOT NULL,
-    [Valor] decimal(18,0)  NOT NULL,
-    [Data_Entrada] datetime  NOT NULL,
-    [Data_Saida] datetime  NOT NULL,
+    [Valor] nvarchar(max)  NOT NULL,
+    [Data_Entrada] nvarchar(max)  NOT NULL,
+    [Data_Saida] nvarchar(max)  NOT NULL,
     [Status] nvarchar(max)  NOT NULL,
     [Situacao] nvarchar(max)  NOT NULL,
-    [ClienteId_Cliente] int  NOT NULL
+    [ClienteId_Cliente] int  NOT NULL,
+    [PranchaId_Prancha] int  NOT NULL
 );
 GO
 
@@ -109,21 +90,6 @@ GO
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
 
--- Creating foreign key on [Cliente_Id_Cliente] in table 'PranchaSet'
-ALTER TABLE [dbo].[PranchaSet]
-ADD CONSTRAINT [FK_PranchaCliente]
-    FOREIGN KEY ([Cliente_Id_Cliente])
-    REFERENCES [dbo].[ClienteSet]
-        ([Id_Cliente])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_PranchaCliente'
-CREATE INDEX [IX_FK_PranchaCliente]
-ON [dbo].[PranchaSet]
-    ([Cliente_Id_Cliente]);
-GO
-
 -- Creating foreign key on [ClienteId_Cliente] in table 'OSSet'
 ALTER TABLE [dbo].[OSSet]
 ADD CONSTRAINT [FK_ClienteOS]
@@ -139,19 +105,19 @@ ON [dbo].[OSSet]
     ([ClienteId_Cliente]);
 GO
 
--- Creating foreign key on [OS_Id_OS] in table 'PranchaSet'
-ALTER TABLE [dbo].[PranchaSet]
+-- Creating foreign key on [PranchaId_Prancha] in table 'OSSet'
+ALTER TABLE [dbo].[OSSet]
 ADD CONSTRAINT [FK_PranchaOS]
-    FOREIGN KEY ([OS_Id_OS])
-    REFERENCES [dbo].[OSSet]
-        ([Id_OS])
+    FOREIGN KEY ([PranchaId_Prancha])
+    REFERENCES [dbo].[PranchaSet]
+        ([Id_Prancha])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_PranchaOS'
 CREATE INDEX [IX_FK_PranchaOS]
-ON [dbo].[PranchaSet]
-    ([OS_Id_OS]);
+ON [dbo].[OSSet]
+    ([PranchaId_Prancha]);
 GO
 
 -- --------------------------------------------------

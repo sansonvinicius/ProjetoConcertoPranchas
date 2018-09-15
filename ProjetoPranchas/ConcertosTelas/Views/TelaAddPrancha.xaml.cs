@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ConcertosTelas.ViewsModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,20 @@ namespace ConcertosTelas.Views
         public TelaAddPrancha()
         {
             InitializeComponent();
+         
+        }
+
+        private void btnSalvarPrancha_Click(object sender, RoutedEventArgs e)
+        {
+            AdicionarPrancha cvm = DataContext as AdicionarPrancha;
+            DialogResult = true;
+        }
+
+
+        private void btnVoltar_Click(object sender, RoutedEventArgs e)
+        {
+            TelaAddPrancha Voltar = new TelaAddPrancha();
+            this.Close();
         }
     }
 }

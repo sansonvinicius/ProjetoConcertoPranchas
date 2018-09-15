@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace ConcertosTelas.ViewsModels
 {
-    class AddClienteViewModel : INotifyPropertyChanged
+    public class AddClienteViewModel : INotifyPropertyChanged
     {
         #region INotifyPropertyChanged
         // o evento abaixo é para executação que não depende do software
@@ -20,14 +20,14 @@ namespace ConcertosTelas.ViewsModels
             if (PropertyChanged !=null)
             PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
         }
-    
-  
 
 
-    #endregion
+        #endregion
+        
 
-    #region CamposModelsCliente
-    private int clienteID;
+
+        #region CamposModelsCliente
+        private int clienteID;
 
         public int ClienteID
         {

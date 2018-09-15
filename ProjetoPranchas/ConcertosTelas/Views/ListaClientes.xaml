@@ -5,12 +5,38 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         mc:Ignorable="d"
-        Title="ListaClientes" Height="450" Width="800"
-        Loaded="Window_Loaded">
-        
-    <Grid>
-        <DataGrid Name="DataGridClientes" HorizontalAlignment="Left" Height="310" Margin="10,10,0,0" VerticalAlignment="Top" Width="744"/>
+        Title="ListaClientes" Height="450" Width="800">
 
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="9*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal">
+            <Button Margin="3" Padding="3" Content="Novo" CommandParameter="{Binding}" Command="{Binding AdicionarCliente}" />
+            <Button Margin="3" Padding="3" Content="Editar" CommandParameter="{Binding}" Command="{Binding EditarCliente}"/>
+            <Button Margin="3" Padding="3" Content="Deletar" CommandParameter="{Binding}" Command="{Binding DeletarCliente}"/>
+        </StackPanel>
+        <ScrollViewer Grid.Row="1"
+                      HorizontalScrollBarVisibility="Visible"
+                      VerticalScrollBarVisibility="Hidden">
+            <DataGrid   ItemsSource="{Binding Clientes}"
+                        AutoGenerateColumns="False"
+                        IsReadOnly="True"
+                         SelectedItem="{Binding ClienteSelecionado}">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding Id_Cliente}"/>
+                    <DataGridTextColumn Header="Nome" Binding="{Binding Nome}"/>
+                    <DataGridTextColumn Header="Sobrenome" Binding="{Binding Sobrenome}"/>
+                    <DataGridTextColumn Header="Email" Binding="{Binding Email}"/>
+                    <DataGridTextColumn Header="Cpf" Binding="{Binding Cpf}"/>
+                    <DataGridTextColumn Header="Telefone" Binding="{Binding Telefone}"/>
+                    <DataGridTextColumn Header="Endereco" Binding="{Binding Endereco}"/>
+
+                </DataGrid.Columns>
+            </DataGrid>
+
+        </ScrollViewer>
     </Grid>
 
 </Window>
