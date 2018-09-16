@@ -20,10 +20,10 @@
         <ScrollViewer Grid.Row="1"
                       HorizontalScrollBarVisibility="Visible"
                       VerticalScrollBarVisibility="Hidden">
-            <DataGrid   ItemsSource="{Binding Pranchas}"
+            <DataGrid x:Name="DataGridPrancha"   ItemsSource="{Binding Pranchas}"
                         AutoGenerateColumns="False"
                         IsReadOnly="True"
-                         SelectedItem="{Binding PranchaSelecionada}" IsSynchronizedWithCurrentItem="False">
+                         SelectedItem="{Binding PranchaSelecionada}" IsSynchronizedWithCurrentItem="True">
                 <DataGrid.Columns>
                     <DataGridTextColumn Header="ID" Binding="{Binding Id_Prancha}"/>
                     <DataGridTextColumn Header="Marca" Binding="{Binding Marca}"/>

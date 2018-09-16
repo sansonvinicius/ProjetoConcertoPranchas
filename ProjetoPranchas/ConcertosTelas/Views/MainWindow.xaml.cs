@@ -59,6 +59,11 @@ namespace ConcertosTelas
             
         }
 
+        private void HistConcetos_Click(object sender, RoutedEventArgs e)
+        {
+            ConcertosFinalizados concertosFinalizados = new ConcertosFinalizados();
+            concertosFinalizados.Show();
 
+        }
     }
 }

@@ -20,9 +20,9 @@ namespace ConcertosTelas.ViewsModels
         public DeletarPrancha DeletarPrancha { get; private set; } = new DeletarPrancha();
         public EditarPrancha EditarPrancha { get; private set; } = new EditarPrancha();
 
+        public ObservableCollection<Prancha> Pranchas { get; set; } = new ObservableCollection<Prancha>();
 
 
-        public ObservableCollection<Prancha> Pranchas { get; set; }
 
 
 

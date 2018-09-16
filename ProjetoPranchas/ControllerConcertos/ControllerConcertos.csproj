@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="ConcertosController.cs" />
     <Compile Include="PranchaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

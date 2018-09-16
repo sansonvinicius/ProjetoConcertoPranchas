@@ -26,14 +26,14 @@
                 <TextBox x:Name="txtSaida" HorizontalAlignment="Left" Height="23" Margin="105,176,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Data_Saida}"/>
                 <TextBox x:Name="txtStatus" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Status}"/>
                 <TextBox x:Name="txtSituacao" HorizontalAlignment="Left" Height="23" Margin="104,251,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Situacao}"/>
-                <TextBox x:Name="txtCliente" HorizontalAlignment="Left" Height="23" Margin="103,323,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Cliente}"/>
-                <TextBox x:Name="txtPrancha" HorizontalAlignment="Left" Height="23" Margin="104,288,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Prancha}"/>
 
 
             <Button x:Name="btnSalvarOS"  HorizontalAlignment="Left" Margin="69,389,0,0" VerticalAlignment="Top" Width="75" CommandParameter="{Binding}" Command="{Binding AdicionarOS}" Content="Adicionar"  Click="btnSalvarOS_Click"/>
             <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="167,388,-1,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
-            <Label Content="Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="40,288,0,0"/>
-            <Label Content="Prancha" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="41,320,0,0"/>
+            <Label Content="Prancha" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="40,288,0,0"/>
+            <Label Content="Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="41,320,0,0"/>
+            <ComboBox x:Name="ComboBoxPrancha" HorizontalAlignment="Left" Margin="105,292,0,0" VerticalAlignment="Top" Width="120"  Text="{Binding Pranchas}"/>
+            <ComboBox x:Name="ComboBoxCliente" HorizontalAlignment="Left" Margin="105,324,0,0" VerticalAlignment="Top" Width="120" Text="{Binding Cliente}"/>
         </Grid>
     </Viewbox>
 </Window>

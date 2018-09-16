@@ -1,4 +1,5 @@
 ﻿using ConcertosTelas.ViewsModels;
+using ModelConcertos;
 using ModelConcertosEntity;
 using System;
 using System.Collections.Generic;
@@ -25,7 +26,8 @@ namespace ConcertosTelas.Views
         {
             InitializeComponent();
             DataContext = new PranchaViewModel();
-
+            
         }
+       
     }
 }

@@ -32,9 +32,12 @@ namespace ConcertosTelas
                 viewModel.OSSelecionada.Data_Saida = cloneOS.Data_Saida;
                 viewModel.OSSelecionada.Status = cloneOS.Status;
                 viewModel.OSSelecionada.Situacao = cloneOS.Situacao;
+                viewModel.OSSelecionada.Cliente = cloneOS.Cliente;
 
 
             }
+
+
         }
     }
 }

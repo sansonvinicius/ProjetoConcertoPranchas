@@ -26,7 +26,7 @@
                 </MenuItem>
                 <MenuItem x:Name="MenuConcertos" Header="Concertos">
                     <MenuItem x:Name="AndamentoConcertos" Header="Andamento"/>
-                    <MenuItem x:Name="HistConcetos" Header="Histórico dos Concertos"/>
+                    <MenuItem x:Name="HistConcetos" Header="Histórico dos Concertos" Click="HistConcetos_Click"/>
                 </MenuItem>
             </Menu>
 

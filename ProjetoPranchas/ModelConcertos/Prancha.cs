@@ -12,7 +12,8 @@ namespace ModelConcertosEntity
     using ModelConcertosEntity;
     using System;
     using System.Collections.Generic;
-    
+    using System.Collections.ObjectModel;
+
     public  class Prancha: BaseNotifyPropertyChanged , ICloneable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -64,6 +65,8 @@ namespace ModelConcertosEntity
             set { SetField(ref _Medida, value); }
         }
 
+
+        public ObservableCollection<Prancha> Pranchas { get; set; } = new ObservableCollection<Prancha>();
 
 
 

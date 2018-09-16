@@ -76,6 +76,9 @@
     <Compile Include="ViewsModels\ClienteViewModel.cs" />
     <Compile Include="ViewsModels\OSViewModel.cs" />
     <Compile Include="ViewsModels\PranchaViewModel.cs" />
+    <Compile Include="Views\ConcertosFinalizados.xaml.cs">
+      <DependentUpon>ConcertosFinalizados.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ListaClientes.xaml.cs">
       <DependentUpon>ListaClientes.xaml</DependentUpon>
     </Compile>
@@ -91,6 +94,10 @@
     <Compile Include="Views\TelaAddOS.xaml.cs">
       <DependentUpon>TelaAddOS.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\ConcertosFinalizados.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ListaClientes.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
