@@ -5,40 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertosTelas"
         mc:Ignorable="d"
-        Title="AddCliente" Height="452" Width="300">
+        Title="AddCliente" Height="350" Width="800
+        ">
     <Viewbox>
-    <Grid>
-        <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,57,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        <Label HorizontalAlignment="Left" Margin="6,93,0,0" VerticalAlignment="Top">
-            <Label Content="Sobrenome:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        </Label>
-        <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
-        <Label HorizontalAlignment="Left" Margin="47,131,0,0" VerticalAlignment="Top">
-            <Label Content="CPF:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        </Label>
-        <Label HorizontalAlignment="Left" Margin="34,173,0,0" VerticalAlignment="Top">
-            <Label Content="E-mail:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        </Label>
-        <Label HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top">
-            <Label Content="Telefone:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        </Label>
-        <Label HorizontalAlignment="Left" Margin="18,252,0,0" VerticalAlignment="Top">
-            <Label Content="Endereço:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
-        </Label>
+        <Grid Height="325" Width="574">
+            <Label Content="Nome:" HorizontalAlignment="Left" Margin="40,57,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            <Label HorizontalAlignment="Left" Margin="6,93,0,0" VerticalAlignment="Top">
+                <Label Content="Sobrenome:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            </Label>
+            <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
+            <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
+            <Label HorizontalAlignment="Left" Margin="47,131,0,0" VerticalAlignment="Top">
+                <Label Content="CPF:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            </Label>
+            <Label HorizontalAlignment="Left" Margin="34,173,0,0" VerticalAlignment="Top">
+                <Label Content="E-mail:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            </Label>
+            <Label HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top">
+                <Label Content="Telefone:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            </Label>
+            <Label HorizontalAlignment="Left" Margin="18,252,0,0" VerticalAlignment="Top">
+                <Label Content="Endereço:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
+            </Label>
 
-        <Label Content="Clientes:" HorizontalAlignment="Left" Margin="105,-14,0,0" VerticalAlignment="Top" Height="41" Width="153" FontSize="20"/>
+            <Label Content="Clientes:" HorizontalAlignment="Left" Margin="222,0,0,0" VerticalAlignment="Top" Height="50" Width="171" FontSize="20"/>
 
-            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="104,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120 " Text="{Binding Nome}"/>
-            <TextBox x:Name="txtSobrenome" HorizontalAlignment="Left" Height="23" Margin="103,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Sobrenome}"/>
-            <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Height="23" Margin="104,136,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="120" Text="{Binding Cpf}"/>
-            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="105,176,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="120" Text="{Binding Email}"/>
-            <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="120" Text="{Binding Telefone}"/>
-            <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="23" Margin="104,255,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="120" Text="{Binding Endereco}"/>
+            <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="104,57,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="347" Text="{Binding Nome}"/>
+            <TextBox x:Name="txtSobrenome" HorizontalAlignment="Left" Height="23" Margin="103,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Text="{Binding Sobrenome}"/>
+            <TextBox x:Name="txtCpf" HorizontalAlignment="Left" Height="23" Margin="104,136,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="347" Text="{Binding Cpf}"/>
+            <TextBox x:Name="txtEmail" HorizontalAlignment="Left" Height="23" Margin="105,176,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="346" Text="{Binding Email}"/>
+            <TextBox x:Name="txtTelefone" HorizontalAlignment="Left" Height="23" Margin="103,213,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="348" Text="{Binding Telefone}"/>
+            <TextBox x:Name="txtEndereco" HorizontalAlignment="Left" Height="23" Margin="104,255,0,0" TextWrapping="Wrap"   VerticalAlignment="Top" Width="347" Text="{Binding Endereco}"/>
 
-        <Button x:Name="btnSalvarCliente"  HorizontalAlignment="Left" Margin="73,293,0,0" VerticalAlignment="Top" Width="75" Click="btnSalvarCliente_Click" CommandParameter="{Binding}" Command="{Binding AdicionarCliente}" Content="Adicionar"/>
-            <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="165,293,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click" />
-        
+            <Button x:Name="btnSalvarCliente"  HorizontalAlignment="Left" Margin="145,295,0,0" VerticalAlignment="Top" Width="75" Click="btnSalvarCliente_Click" CommandParameter="{Binding}" Command="{Binding AdicionarCliente}" Content="Adicionar"/>
+            <Button x:Name="btnVoltar" Content="Voltar" HorizontalAlignment="Left" Margin="337,295,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click" />
+
 
         </Grid>
     </Viewbox>

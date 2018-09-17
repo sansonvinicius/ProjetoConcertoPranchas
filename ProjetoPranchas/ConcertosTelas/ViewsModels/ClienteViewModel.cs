@@ -39,6 +39,28 @@ namespace ConcertosTelas.ViewsModels
         public ClienteViewModel()
         {
             Clientes = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.Cliente>();
+            Clientes.Add(new ModelConcertos.Cliente()
+            {
+                Id_Cliente = 3,
+                Nome = "Vinicius",
+                Sobrenome = "Sanson",
+                Cpf = "072572239-80",
+                Email = "sansonvinicius@gmail.com",
+                Telefone = "99119-6226",
+                Endereco = "Avenida Nossa Senhora da Luz 849",
+
+            });
+            Clientes.Add(new ModelConcertos.Cliente()
+            {
+                Id_Cliente = 4,
+                Nome = "Alisson",
+                Sobrenome = "Hoffman",
+                Cpf = "001001001-01",
+                Email = "Alisson@alisson.com.br",
+                Telefone = "9999-9999",
+                Endereco = "Endereço do Alisson 001",
+
+            });
         }
     }
 }

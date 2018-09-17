@@ -44,14 +44,25 @@ namespace ConcertosTelas.ViewsModels
         {
             
             Pranchas = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.Prancha>();
-            Pranchas.Add(new ModelConcertos.Prancha()
+            Pranchas.Add(new Prancha()
             {
                 Id_Prancha = 3,
-                Modelo = "Teste",
-                Marca = "Teste",
-                Medida = "Teste",
-                Cor = "Cor",
-                QtdQuilhas= 4
+                Modelo = "LongBoard",
+                Marca = "Pro Ilha",
+                Medida = "6.5",
+                Cor = "Branca",
+                QtdQuilhas= 4,
+              
+            });
+            Pranchas.Add(new ModelConcertos.Prancha()
+            {
+                Id_Prancha = 4,
+                Modelo = "Fish",
+                Marca = "Canfield",
+                Medida = "5.4",
+                Cor = "Azul",
+                QtdQuilhas = 3,
+
             });
             PranchaSelecionada = Pranchas.FirstOrDefault();
 
