@@ -49,6 +49,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BaseNotifyPropertyChanged.cs" />
     <Compile Include="Class1.cs" />
     <Compile Include="Cliente.cs">
       <DependentUpon>ModelConcertosEntity.tt</DependentUpon>
@@ -75,6 +76,7 @@
       <DependentUpon>ModelConcertosEntity.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Status.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 09/15/2018 12:14:43
+-- Date Created: 09/16/2018 21:31:47
 -- Generated from EDMX file: C:\Users\sanso\Source\Repos\ProjetoConcertoPranchas\ProjetoPranchas\ModelConcertos\ModelConcertosEntity.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,26 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_ClienteOS]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[OSSet] DROP CONSTRAINT [FK_ClienteOS];
+GO
+IF OBJECT_ID(N'[dbo].[FK_PranchaOS]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[OSSet] DROP CONSTRAINT [FK_PranchaOS];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[ClienteSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ClienteSet];
+GO
+IF OBJECT_ID(N'[dbo].[OSSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[OSSet];
+GO
+IF OBJECT_ID(N'[dbo].[PranchaSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[PranchaSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -33,7 +48,7 @@ CREATE TABLE [dbo].[PranchaSet] (
     [Marca] nvarchar(max)  NOT NULL,
     [Modelo] nvarchar(max)  NOT NULL,
     [Cor] nvarchar(max)  NOT NULL,
-    [QtdQuilhas] nvarchar(max)  NOT NULL,
+    [QtdQuilhas] int  NOT NULL,
     [Medida] nvarchar(max)  NOT NULL
 );
 GO
@@ -54,9 +69,9 @@ GO
 CREATE TABLE [dbo].[OSSet] (
     [Id_OS] int IDENTITY(1,1) NOT NULL,
     [Descricao] nvarchar(max)  NOT NULL,
-    [Valor] nvarchar(max)  NOT NULL,
-    [Data_Entrada] nvarchar(max)  NOT NULL,
-    [Data_Saida] nvarchar(max)  NOT NULL,
+    [Valor] decimal(18,0)  NOT NULL,
+    [Data_Entrada] datetime  NOT NULL,
+    [Data_Saida] datetime  NOT NULL,
     [Status] nvarchar(max)  NOT NULL,
     [Situacao] nvarchar(max)  NOT NULL,
     [ClienteId_Cliente] int  NOT NULL,

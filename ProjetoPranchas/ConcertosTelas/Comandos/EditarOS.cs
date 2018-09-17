@@ -19,7 +19,7 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModel = (OSViewModel)parameter;
-            var cloneOS = (ModelConcertosEntity.OS)viewModel.OSSelecionada.Clone();
+            var cloneOS = (ModelConcertos.OS)viewModel.OSSelecionada.Clone();
             var cw = new TelaAddOS();
             cw.DataContext = cloneOS;
             cw.ShowDialog();

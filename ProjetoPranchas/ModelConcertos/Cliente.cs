@@ -7,20 +7,18 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelConcertosEntity
+namespace ModelConcertos
 {
-    using global::ModelConcertosEntity;
     using System;
     using System.Collections.Generic;
-
-    public class Cliente : BaseNotifyPropertyChanged, ICloneable
+    
+    public partial class Cliente: BaseNotifyPropertyChanged, ICloneable
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Cliente()
         {
             this.OS = new HashSet<OS>();
         }
-
         private int _Id_Cliente;
         public int Id_Cliente
         {
@@ -71,13 +69,15 @@ namespace ModelConcertosEntity
         }
 
 
-        /* public int Id_Cliente { get; set; }
-         public string Nome { get; set; }
-         public string Sobrenome { get; set; }
-         public string Email { get; set; }
-         public string Cpf { get; set; }
-         public string Telefone { get; set; }
-         public string Endereco { get; set; }*/
+
+
+        /*public int Id_Cliente { get; set; }
+        public string Nome { get; set; }
+        public string Sobrenome { get; set; }
+        public string Email { get; set; }
+        public string Cpf { get; set; }
+        public string Telefone { get; set; }
+        public string Endereco { get; set; }*/
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OS> OS { get; set; }
@@ -85,10 +85,25 @@ namespace ModelConcertosEntity
         public object Clone()
         {
             return this.MemberwiseClone();
+
+        }
+    }
+
+    public abstract class BaseNotifyPropertyChanged : System.ComponentModel.INotifyPropertyChanged
+    {
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+
+        protected void SetField<T>(ref T field, T value, [System.Runtime.CompilerServices.CallerMemberName] string propertyName = null)
+        {
+            if (!EqualityComparer<T>.Default.Equals(field, value))
+            {
+                field = value;
+                RaisePropertyChanged(propertyName);
+            }
+        }
+        protected void RaisePropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
 }
-
-   
-
-

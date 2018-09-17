@@ -1,4 +1,5 @@
-﻿using ModelConcertosEntity;
+﻿using ModelConcertos;
+using ModelConcertosEntity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -22,8 +23,8 @@ namespace ConcertosTelas.ViewsModels
         public ObservableCollection<OS> OSs { get; set; }
 
 
-        private ModelConcertosEntity.OS _osSelecionada;
-        public ModelConcertosEntity.OS OSSelecionada
+        private ModelConcertos.OS _osSelecionada;
+        public ModelConcertos.OS OSSelecionada
         {
             get { return _osSelecionada; }
             set {
@@ -36,7 +37,7 @@ namespace ConcertosTelas.ViewsModels
         }
         public OSViewModel()
         {
-            OSs = new System.Collections.ObjectModel.ObservableCollection<ModelConcertosEntity.OS>();
+            OSs = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.OS>();
         }
     }
 

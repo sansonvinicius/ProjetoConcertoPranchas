@@ -19,7 +19,7 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModel = (PranchaViewModel)parameter;
-            var clonePrancha = (ModelConcertosEntity.Prancha)viewModel.PranchaSelecionada.Clone();
+            var clonePrancha = (ModelConcertos.Prancha)viewModel.PranchaSelecionada.Clone();
             var fw = new TelaAddPrancha();
             fw.DataContext = clonePrancha;
             fw.ShowDialog();

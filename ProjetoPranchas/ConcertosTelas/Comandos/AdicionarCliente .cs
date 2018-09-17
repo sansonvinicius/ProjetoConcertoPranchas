@@ -20,7 +20,7 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModelCliente = (ClienteViewModel)parameter;
-            var cliente = new ModelConcertosEntity.Cliente();
+            var cliente = new ModelConcertos.Cliente();
             var maxId = 0;
                     if (viewModelCliente.Clientes.Any())
             {

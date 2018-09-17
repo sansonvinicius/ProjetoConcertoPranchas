@@ -1,5 +1,6 @@
 ﻿
 using ConcertosTelas.Views;
+using ModelConcertos;
 using ModelConcertosEntity;
 using System;
 using System.Collections.Generic;
@@ -26,8 +27,8 @@ namespace ConcertosTelas.ViewsModels
 
 
 
-        private ModelConcertosEntity.Prancha _pranchaSelecionada;
-        public ModelConcertosEntity.Prancha PranchaSelecionada
+        private ModelConcertos.Prancha _pranchaSelecionada;
+        public ModelConcertos.Prancha PranchaSelecionada
         {
             get { return _pranchaSelecionada; }
             set {
@@ -42,15 +43,15 @@ namespace ConcertosTelas.ViewsModels
         public PranchaViewModel()
         {
             
-            Pranchas = new System.Collections.ObjectModel.ObservableCollection<ModelConcertosEntity.Prancha>();
-            Pranchas.Add(new ModelConcertosEntity.Prancha()
+            Pranchas = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.Prancha>();
+            Pranchas.Add(new ModelConcertos.Prancha()
             {
                 Id_Prancha = 3,
                 Modelo = "Teste",
                 Marca = "Teste",
                 Medida = "Teste",
                 Cor = "Cor",
-                QtdQuilhas= "4"
+                QtdQuilhas= 4
             });
             PranchaSelecionada = Pranchas.FirstOrDefault();
 

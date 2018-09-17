@@ -7,14 +7,15 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelConcertosEntity
+namespace ModelConcertos
 {
-    using global::ModelConcertosEntity;
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class OS : BaseNotifyPropertyChanged, ICloneable
     {
+
 
         private int _Id_OS;
         public int Id_OS
@@ -30,25 +31,25 @@ namespace ModelConcertosEntity
             set { SetField(ref _Descricao, value); }
         }
 
-        private string _Valor;
-        public string Valor
+        private decimal _Valor;
+        public decimal Valor
         {
             get { return _Valor; }
             set { SetField(ref _Valor, value); }
         }
-
-        private string _Data_Entrada;
-        public string Data_Entrada
+        [Required]
+        private DateTime? _Data_Entrada;
+        public DateTime? Data_Entrada
         {
             get { return _Data_Entrada; }
             set { SetField(ref _Data_Entrada, value); }
         }
-
-        private string _Data_Saida;
-        public string Data_Saida
+        [Required]
+        private DateTime? _Data_Saida;
+        public DateTime? Data_Saida
         {
             get { return _Data_Saida; }
-            set { SetField(ref  _Data_Saida, value); }
+            set { SetField(ref _Data_Saida, value); }
         }
 
         private string _Status;
@@ -79,26 +80,25 @@ namespace ModelConcertosEntity
             set { SetField(ref _Prancha, value); }
         }
 
-
+        public object Clone()
+        {
+            return this.MemberwiseClone();
+        }
 
 
 
         /* public int Id_OS { get; set; }
          public string Descricao { get; set; }
-         public string Valor { get; set; }
-         public string Data_Entrada { get; set; }
-         public string Data_Saida { get; set; }
+         public decimal Valor { get; set; }
+         public System.DateTime Data_Entrada { get; set; }
+         public System.DateTime Data_Saida { get; set; }
          public string Status { get; set; }
          public string Situacao { get; set; }
          public int ClienteId_Cliente { get; set; }
-         public int PranchaId_Prancha { get; set; }*/
+         public int PranchaId_Prancha { get; set; }
 
-        // public virtual Cliente Cliente { get; set; }
-        //public virtual Prancha Prancha { get; set; }
-
-        public object Clone()
-        {
-            return this.MemberwiseClone();
-        }
+         public virtual Cliente Cliente { get; set; }
+         public virtual Prancha Prancha { get; set; }
+         */
     }
 }

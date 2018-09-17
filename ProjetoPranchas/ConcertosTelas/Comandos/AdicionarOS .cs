@@ -20,9 +20,10 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModelOS = (OSViewModel)parameter;
-            var os = new ModelConcertosEntity.OS();
+            var os = new ModelConcertos.OS();
             var maxId = 0;
-                    if (viewModelOS.OSs.Any())
+
+            if (viewModelOS.OSs.Any())
             {
                maxId = viewModelOS.OSs.Max(o => o.Id_OS);
             }
