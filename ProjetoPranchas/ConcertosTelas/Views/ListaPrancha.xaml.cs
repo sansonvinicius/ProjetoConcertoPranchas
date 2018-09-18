@@ -26,6 +26,8 @@ namespace ConcertosTelas.Views
         {
             InitializeComponent();
             DataContext = new PranchaViewModel();
+
+            
             
         }
        

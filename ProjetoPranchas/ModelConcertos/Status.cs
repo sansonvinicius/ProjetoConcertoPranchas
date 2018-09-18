@@ -10,6 +10,7 @@ namespace ModelConcertos
     {
         Recebido,
         Andamento,
-        Finalizado
+        Finalizado,
+            
     }
 }

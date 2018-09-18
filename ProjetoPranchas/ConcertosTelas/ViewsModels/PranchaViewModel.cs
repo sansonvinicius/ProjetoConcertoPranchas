@@ -43,7 +43,7 @@ namespace ConcertosTelas.ViewsModels
         public PranchaViewModel()
         {
             
-            Pranchas = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.Prancha>();
+            Pranchas= new ObservableCollection<Prancha>();
             Pranchas.Add(new Prancha()
             {
                 Id_Prancha = 3,
@@ -69,6 +69,7 @@ namespace ConcertosTelas.ViewsModels
 
 
 
+
         }
 
 
@@ -77,9 +78,7 @@ namespace ConcertosTelas.ViewsModels
 
 
 
-
-
-    }
+        }
 }
 
   
