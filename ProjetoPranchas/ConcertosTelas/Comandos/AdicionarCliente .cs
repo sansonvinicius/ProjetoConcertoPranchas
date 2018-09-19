@@ -35,8 +35,10 @@ namespace ConcertosTelas
 
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
             {//Controller
-
-                viewModelCliente.Clientes.Add(cliente);
+                ClienteController clienteController = new ClienteController();
+               // viewModelCliente.Clientes = clienteController.InserirCliente(cliente);
+                
+                //viewModelCliente.Clientes.Add(cliente);
                 viewModelCliente.ClienteSelecionado = cliente;
 
             }

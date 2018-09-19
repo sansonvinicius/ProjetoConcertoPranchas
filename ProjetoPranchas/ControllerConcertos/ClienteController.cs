@@ -11,12 +11,12 @@ namespace ControllerConcertos
 {
     public class ClienteController 
     {
-        public void InserirCliente(Cliente cliente)
+        public  void InserirCliente(Cliente cliente)
         {
+            var listClientes = new ObservableCollection<Cliente>();
             ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             contexto.ClienteSet.Add(cliente);
             contexto.SaveChanges();
-
 
         }
 
@@ -31,6 +31,8 @@ namespace ControllerConcertos
             ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             return new ObservableCollection<Cliente>(contexto.ClienteSet.ToList());
         }
+
+
 
         Cliente BuscarClientePorId(int Id_Cliente)
         {
