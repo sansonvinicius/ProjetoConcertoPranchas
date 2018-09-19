@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ControllerConcertos;
 
 namespace ConcertosTelas
 {
@@ -20,26 +21,27 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModelCliente = (ClienteViewModel)parameter;
-            var cliente = new ModelConcertos.Cliente();
+            var cliente = new ModelConcertosEntity.Cliente();
             var maxId = 0;
-                    if (viewModelCliente.Clientes.Any())
+            if (viewModelCliente.Clientes.Any())
             {
-               maxId = viewModelCliente.Clientes.Max(p => p.Id_Cliente);
+                maxId = viewModelCliente.Clientes.Max(p => p.Id_Cliente);
             }
             cliente.Id_Cliente = maxId + 1;
 
             var cw = new TelaAddCliente();
             cw.DataContext = cliente;
             cw.ShowDialog();
-            
+
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
-            {
+            {//Controller
+
                 viewModelCliente.Clientes.Add(cliente);
                 viewModelCliente.ClienteSelecionado = cliente;
-                
+
             }
         }
-      
+
 
     }
 }

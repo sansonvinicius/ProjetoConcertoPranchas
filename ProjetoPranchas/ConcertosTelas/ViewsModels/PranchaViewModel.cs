@@ -27,8 +27,8 @@ namespace ConcertosTelas.ViewsModels
 
 
 
-        private ModelConcertos.Prancha _pranchaSelecionada;
-        public ModelConcertos.Prancha PranchaSelecionada
+        private ModelConcertosEntity.Prancha _pranchaSelecionada;
+        public ModelConcertosEntity.Prancha PranchaSelecionada
         {
             get { return _pranchaSelecionada; }
             set {
@@ -54,7 +54,7 @@ namespace ConcertosTelas.ViewsModels
                 QtdQuilhas= 4,
               
             });
-            Pranchas.Add(new ModelConcertos.Prancha()
+            Pranchas.Add(new ModelConcertosEntity.Prancha()
             {
                 Id_Prancha = 4,
                 Modelo = "Fish",

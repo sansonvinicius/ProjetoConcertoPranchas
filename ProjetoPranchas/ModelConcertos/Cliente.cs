@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelConcertos
+namespace ModelConcertosEntity
 {
     using System;
     using System.Collections.Generic;
@@ -80,13 +80,15 @@ namespace ModelConcertos
         public string Endereco { get; set; }*/
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OS> OS { get; set; }
+         public virtual ICollection<OS> OS { get; set; }
 
         public object Clone()
         {
             return this.MemberwiseClone();
 
         }
+
+  
     }
 
     public abstract class BaseNotifyPropertyChanged : System.ComponentModel.INotifyPropertyChanged
@@ -106,4 +108,7 @@ namespace ModelConcertos
             PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
+
+   
+
 }

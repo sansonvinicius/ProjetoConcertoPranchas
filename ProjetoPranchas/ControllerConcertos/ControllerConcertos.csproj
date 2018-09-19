@@ -48,23 +48,19 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
-    <Compile Include="ConcertosController.cs" />
+    <Compile Include="ClienteController.cs" />
     <Compile Include="PranchaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConcertosTelas\ConcertosTelas.csproj">
-      <Project>{3b55e7f2-5a90-44d4-934a-56ed81f7aee5}</Project>
-      <Name>ConcertosTelas</Name>
-    </ProjectReference>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\ModelConcertos\ModelConcertos.csproj">
       <Project>{60D51CB7-D305-41D5-B8C6-FB970D9BDBF9}</Project>
       <Name>ModelConcertos</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

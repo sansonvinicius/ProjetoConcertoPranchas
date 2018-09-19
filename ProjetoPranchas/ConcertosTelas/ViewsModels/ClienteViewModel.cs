@@ -1,31 +1,22 @@
-﻿using ModelConcertos;
+﻿using ControllerConcertos;
 using ModelConcertosEntity;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
-using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ConcertosTelas.ViewsModels
 {
-    class ClienteViewModel : BaseNotifyPropertyChanged
+    class ClienteViewModel :  BaseNotifyPropertyChanged 
+
     {
         public AdicionarCliente AdicionarCliente { get; private set; } = new AdicionarCliente();
         public DeletarCliente DeletarCliente { get; private set; } = new DeletarCliente();
         public EditarCliente EditarCliente { get; private set; } = new EditarCliente();
 
 
-
-
-
         public ObservableCollection<Cliente> Clientes { get; set; }
 
 
-        private ModelConcertos.Cliente _clienteSelecionado;
-        public ModelConcertos.Cliente ClienteSelecionado
+        private ModelConcertosEntity.Cliente _clienteSelecionado;
+        public ModelConcertosEntity.Cliente ClienteSelecionado
         {
             get { return _clienteSelecionado; }
             set {
@@ -38,7 +29,10 @@ namespace ConcertosTelas.ViewsModels
         }
         public ClienteViewModel()
         {
-            Clientes = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.Cliente>();
+            ClienteController clienteController = new ClienteController();
+            Clientes = clienteController.GetCliente();
+           // Clientes = ClientesController.ListarTOdos();
+           /*Clientes = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.Cliente>();
             Clientes.Add(new ModelConcertos.Cliente()
             {
                 Id_Cliente = 3,
@@ -60,7 +54,7 @@ namespace ConcertosTelas.ViewsModels
                 Telefone = "9999-9999",
                 Endereco = "Endereço do Alisson 001",
 
-            });
+            });*/
         }
     }
 }

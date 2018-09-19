@@ -20,7 +20,7 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModelPrancha = (PranchaViewModel)parameter;
-            var prancha = new ModelConcertos.Prancha();
+            var prancha = new ModelConcertosEntity.Prancha();
             var maxId = 0;
                     if (viewModelPrancha.Pranchas.Any())
             {

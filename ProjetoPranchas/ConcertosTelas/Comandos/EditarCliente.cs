@@ -18,7 +18,7 @@ namespace ConcertosTelas
         public override void Execute(object parameter)
         {
             var viewModel = (ClienteViewModel)parameter;
-            var cloneCliente = (ModelConcertos.Cliente)viewModel.ClienteSelecionado.Clone();
+            var cloneCliente = (ModelConcertosEntity.Cliente)viewModel.ClienteSelecionado.Clone();
             var cw = new TelaAddCliente();
             cw.DataContext = cloneCliente;
             cw.ShowDialog();

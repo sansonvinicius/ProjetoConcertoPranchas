@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace ModelConcertos
+namespace ModelConcertosEntity
 {
     using System;
     using System.Collections.Generic;

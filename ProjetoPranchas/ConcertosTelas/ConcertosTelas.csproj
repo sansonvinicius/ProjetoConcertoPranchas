@@ -72,7 +72,6 @@
     <Compile Include="Comandos\EditarPrancha.cs" />
     <Compile Include="ViewsModels\BaseNotifyPropertyChanged.cs" />
     <Compile Include="Comandos\Comandos.cs" />
-    <Compile Include="ViewsModels\AddClienteViewModel.cs" />
     <Compile Include="ViewsModels\ClienteViewModel.cs" />
     <Compile Include="ViewsModels\OSViewModel.cs" />
     <Compile Include="ViewsModels\PranchaViewModel.cs" />
@@ -171,6 +170,10 @@
     <Resource Include="Views\Oficina.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ControllerConcertos\ControllerConcertos.csproj">
+      <Project>{828696B2-78DB-45F5-8FDC-0B7D1A1D24DC}</Project>
+      <Name>ControllerConcertos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ModelConcertos\ModelConcertos.csproj">
       <Project>{60d51cb7-d305-41d5-b8c6-fb970d9bdbf9}</Project>
       <Name>ModelConcertos</Name>

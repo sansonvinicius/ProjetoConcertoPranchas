@@ -23,8 +23,8 @@ namespace ConcertosTelas.ViewsModels
         public ObservableCollection<OS> OSs { get; set; }
 
 
-        private ModelConcertos.OS _osSelecionada;
-        public ModelConcertos.OS OSSelecionada
+        private ModelConcertosEntity.OS _osSelecionada;
+        public ModelConcertosEntity.OS OSSelecionada
         {
             get { return _osSelecionada; }
             set {
@@ -37,7 +37,7 @@ namespace ConcertosTelas.ViewsModels
         }
         public OSViewModel()
         {
-            OSs = new System.Collections.ObjectModel.ObservableCollection<ModelConcertos.OS>();
+            OSs = new System.Collections.ObjectModel.ObservableCollection<ModelConcertosEntity.OS>();
         }
     }
 
