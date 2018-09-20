@@ -49,6 +49,7 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="ClienteController.cs" />
+    <Compile Include="OSController.cs" />
     <Compile Include="PranchaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
