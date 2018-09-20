@@ -10,14 +10,13 @@ using System.Threading.Tasks;
 
 namespace ControllerConcertos
 {
-    class PranchaController
+   public class PranchaController
     {
-      public  List<Prancha> ListarPranchas()
+        public ObservableCollection<Prancha> GetPrancha()
         {
             ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
-            return contexto.PranchaSet.ToList();
+            return new ObservableCollection<Prancha>(contexto.PranchaSet.ToList());
         }
-    
 
 
 

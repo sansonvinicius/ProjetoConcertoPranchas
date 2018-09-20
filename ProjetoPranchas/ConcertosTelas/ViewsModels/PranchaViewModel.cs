@@ -1,5 +1,6 @@
 ﻿
 using ConcertosTelas.Views;
+using ControllerConcertos;
 using ModelConcertos;
 using ModelConcertosEntity;
 using System;
@@ -42,29 +43,9 @@ namespace ConcertosTelas.ViewsModels
 
         public PranchaViewModel()
         {
-            
-            Pranchas= new ObservableCollection<Prancha>();
-            Pranchas.Add(new Prancha()
-            {
-                Id_Prancha = 3,
-                Modelo = "LongBoard",
-                Marca = "Pro Ilha",
-                Medida = "6.5",
-                Cor = "Branca",
-                QtdQuilhas= 4,
-              
-            });
-            Pranchas.Add(new ModelConcertosEntity.Prancha()
-            {
-                Id_Prancha = 4,
-                Modelo = "Fish",
-                Marca = "Canfield",
-                Medida = "5.4",
-                Cor = "Azul",
-                QtdQuilhas = 3,
 
-            });
-            PranchaSelecionada = Pranchas.FirstOrDefault();
+            PranchaController pranchaController = new PranchaController();
+            Pranchas = pranchaController.GetPrancha();
 
 
 

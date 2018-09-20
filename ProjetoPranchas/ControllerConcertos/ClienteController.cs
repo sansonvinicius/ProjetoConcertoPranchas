@@ -13,7 +13,6 @@ namespace ControllerConcertos
     {
         public  void InserirCliente(Cliente cliente)
         {
-            var listClientes = new ObservableCollection<Cliente>();
             ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             contexto.ClienteSet.Add(cliente);
             contexto.SaveChanges();
