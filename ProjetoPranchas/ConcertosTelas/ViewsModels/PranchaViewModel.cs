@@ -22,7 +22,16 @@ namespace ConcertosTelas.ViewsModels
         public DeletarPrancha DeletarPrancha { get; private set; } = new DeletarPrancha();
         public EditarPrancha EditarPrancha { get; private set; } = new EditarPrancha();
 
-        public ObservableCollection<Prancha> Pranchas { get; set; } = new ObservableCollection<Prancha>();
+        private ObservableCollection<Prancha> _pranchas;
+        public ObservableCollection<Prancha> Pranchas
+        {
+            get { return _pranchas; }
+            set
+            {
+                SetField(ref _pranchas, value);
+
+            }
+        }
 
 
 

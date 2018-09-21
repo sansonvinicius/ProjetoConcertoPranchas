@@ -22,13 +22,7 @@ namespace ConcertosTelas
         {
             var viewModelPrancha = (PranchaViewModel)parameter;
             var prancha = new ModelConcertosEntity.Prancha();
-            var maxId = 0;
-                    if (viewModelPrancha.Pranchas.Any())
-            {
-               maxId = viewModelPrancha.Pranchas.Max(p => p.Id_Prancha);
-            }
-            prancha.Id_Prancha = maxId + 1;
-
+            
             var pw = new TelaAddPrancha();
             pw.DataContext = prancha;
             pw.ShowDialog();

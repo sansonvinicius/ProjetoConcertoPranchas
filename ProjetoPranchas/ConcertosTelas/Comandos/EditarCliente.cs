@@ -27,7 +27,6 @@ namespace ConcertosTelas
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
             {
                 ClienteController clienteController = new ClienteController();
-                clienteController.EditarCliente(viewModelCliente.ClienteSelecionado.Id_Cliente, viewModelCliente.ClienteSelecionado);
 
                 viewModelCliente.ClienteSelecionado.Nome = cloneCliente.Nome;
                 viewModelCliente.ClienteSelecionado.Sobrenome = cloneCliente.Sobrenome;
@@ -35,6 +34,8 @@ namespace ConcertosTelas
                 viewModelCliente.ClienteSelecionado.Cpf = cloneCliente.Cpf;
                 viewModelCliente.ClienteSelecionado.Telefone = cloneCliente.Telefone;
                 viewModelCliente.ClienteSelecionado.Endereco = cloneCliente.Endereco;
+
+                clienteController.EditarCliente(viewModelCliente.ClienteSelecionado.Id_Cliente, viewModelCliente.ClienteSelecionado);
 
                 viewModelCliente.Clientes = clienteController.GetCliente();
 

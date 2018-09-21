@@ -36,7 +36,7 @@ namespace ControllerConcertos
             ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
 
             Prancha pExcluir = BuscarPranchaPorId(Id_Prancha);
-            pExcluir = contexto.PranchaSet.Where(o => o.Id_Prancha == pExcluir.Id_Prancha).FirstOrDefault();
+            pExcluir = contexto.PranchaSet.Where(p => p.Id_Prancha == pExcluir.Id_Prancha).FirstOrDefault();
 
             if (pExcluir != null)
             {

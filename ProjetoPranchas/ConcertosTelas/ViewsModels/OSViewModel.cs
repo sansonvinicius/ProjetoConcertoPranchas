@@ -18,11 +18,16 @@ namespace ConcertosTelas.ViewsModels
         public DeletarOS DeletarOS { get; private set; } = new DeletarOS();
         public EditarOS EditarOS { get; private set; } = new EditarOS();
 
+        private ObservableCollection<OS> _oss;
+        public ObservableCollection<OS> OSs
+        {
+            get { return _oss; }
+            set
+            {
+                SetField(ref _oss, value);
 
-
-
-        public ObservableCollection<OS> OSs { get; set; }
-
+            }
+        }
 
         private ModelConcertosEntity.OS _osSelecionada;
         public ModelConcertosEntity.OS OSSelecionada
