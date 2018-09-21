@@ -3,6 +3,7 @@ using ModelConcertosEntity;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -54,25 +55,36 @@ namespace ControllerConcertos
             }
         }
 
-        void EditarCliente(int Id_Cliente, Cliente novosDadosCliente)
+        public void EditarCliente(int Id_Cliente, Cliente novosDadosCliente)
         {
+            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+
             //Procura por id e atualiza os dados em novoDadosPerson
             Cliente clienteAntigo = BuscarClientePorId(Id_Cliente);
 
             if (clienteAntigo != null)
             {
+                try { 
                 clienteAntigo.Nome= novosDadosCliente.Nome;
                 clienteAntigo.Sobrenome = novosDadosCliente.Sobrenome;
                 clienteAntigo.Cpf = novosDadosCliente.Cpf;
                 clienteAntigo.Telefone = novosDadosCliente.Telefone;
                 clienteAntigo.Email = novosDadosCliente.Email;
                 clienteAntigo.Endereco = novosDadosCliente.Endereco;
-
-
-                ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+               
                 contexto.Entry(clienteAntigo).State = System.Data.Entity.EntityState.Modified;
+                   
+                }       
+
+                catch (System.Exception)
+                {
+
+                }
 
                 contexto.SaveChanges();
+
+
+
             }
         }
     }

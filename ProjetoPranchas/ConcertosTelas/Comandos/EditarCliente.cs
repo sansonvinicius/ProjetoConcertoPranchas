@@ -1,4 +1,5 @@
 ﻿using ConcertosTelas.ViewsModels;
+using ControllerConcertos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,20 +18,27 @@ namespace ConcertosTelas
 
         public override void Execute(object parameter)
         {
-            var viewModel = (ClienteViewModel)parameter;
-            var cloneCliente = (ModelConcertosEntity.Cliente)viewModel.ClienteSelecionado.Clone();
+            var viewModelCliente = (ClienteViewModel)parameter;
+            var cloneCliente = (ModelConcertosEntity.Cliente)viewModelCliente.ClienteSelecionado.Clone();
             var cw = new TelaAddCliente();
             cw.DataContext = cloneCliente;
             cw.ShowDialog();
 
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
             {
-                viewModel.ClienteSelecionado.Nome = cloneCliente.Nome;
-                viewModel.ClienteSelecionado.Sobrenome = cloneCliente.Sobrenome;
-                viewModel.ClienteSelecionado.Email = cloneCliente.Email;
-                viewModel.ClienteSelecionado.Cpf = cloneCliente.Cpf;
-                viewModel.ClienteSelecionado.Telefone = cloneCliente.Telefone;
-                viewModel.ClienteSelecionado.Endereco = cloneCliente.Endereco;
+                ClienteController clienteController = new ClienteController();
+                clienteController.EditarCliente(viewModelCliente.ClienteSelecionado.Id_Cliente, viewModelCliente.ClienteSelecionado);
+
+                viewModelCliente.ClienteSelecionado.Nome = cloneCliente.Nome;
+                viewModelCliente.ClienteSelecionado.Sobrenome = cloneCliente.Sobrenome;
+                viewModelCliente.ClienteSelecionado.Email = cloneCliente.Email;
+                viewModelCliente.ClienteSelecionado.Cpf = cloneCliente.Cpf;
+                viewModelCliente.ClienteSelecionado.Telefone = cloneCliente.Telefone;
+                viewModelCliente.ClienteSelecionado.Endereco = cloneCliente.Endereco;
+
+                viewModelCliente.Clientes = clienteController.GetCliente();
+
+
 
 
             }
