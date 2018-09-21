@@ -1,4 +1,5 @@
 ﻿using ConcertosTelas.ViewsModels;
+using ControllerConcertos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,17 @@ namespace ConcertosTelas
 
         public override void Execute(object parameter)
         {
-            var viewModel = (OSViewModel)parameter;
-            viewModel.OSs.Remove(viewModel.OSSelecionada);
-            viewModel.OSSelecionada = viewModel.OSs.FirstOrDefault();
+            var viewModelOs = parameter as OSViewModel;
+            var os = new ModelConcertosEntity.OS();
+            OSController osController = new OSController();
+
+            osController.ExcluirOs(viewModelOs.OSSelecionada.Id_OS);
+            viewModelOs.OSs = osController.GetOS();
+
         }
     }
 }
+
+
+
+

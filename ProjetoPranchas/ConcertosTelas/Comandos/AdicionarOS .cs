@@ -6,13 +6,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ControllerConcertos;
 
 namespace ConcertosTelas
 {
     class AdicionarOS : Comandos
     {
-
-
+        
         public override bool CanExecute(object parameter)
         {
             return parameter is OSViewModel;
@@ -35,13 +35,14 @@ namespace ConcertosTelas
             
             if (ow.DialogResult.HasValue && ow.DialogResult.Value)
             {
-                viewModelOS.OSs.Add(os);
-                viewModelOS.OSSelecionada = os;
-                
+                OSController osController = new OSController();
+                osController.InserirOs(os);
+                viewModelOS.OSs = osController.GetOS();
+
+                               
             }
         }
       
 
     }
 }
-

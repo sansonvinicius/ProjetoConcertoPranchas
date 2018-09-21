@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ControllerConcertos;
 
 namespace ConcertosTelas
 {
@@ -34,8 +35,12 @@ namespace ConcertosTelas
             
             if (pw.DialogResult.HasValue && pw.DialogResult.Value)
             {
-                viewModelPrancha.Pranchas.Add(prancha);
-                viewModelPrancha.PranchaSelecionada = prancha;
+                PranchaController pranchaController = new PranchaController();
+                pranchaController.InserirPrancha(prancha);
+                viewModelPrancha.Pranchas = pranchaController.GetPrancha();
+
+                //viewModelPrancha.Pranchas.Add(prancha);
+                //viewModelPrancha.PranchaSelecionada = prancha;
                 
             }
         }

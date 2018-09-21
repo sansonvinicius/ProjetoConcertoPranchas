@@ -1,4 +1,5 @@
 ﻿using ConcertosTelas.ViewsModels;
+using ControllerConcertos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,17 @@ namespace ConcertosTelas
 
         public override void Execute(object parameter)
         {
-            var viewModel = (PranchaViewModel)parameter;
-            viewModel.Pranchas.Remove(viewModel.PranchaSelecionada);
-            viewModel.PranchaSelecionada = viewModel.Pranchas.FirstOrDefault();
+            var viewModelPrancha = parameter as PranchaViewModel;
+            var prancha = new ModelConcertosEntity.Prancha();
+            PranchaController pranchaController = new PranchaController();
+
+            pranchaController.ExcluirPrancha(viewModelPrancha.PranchaSelecionada.Id_Prancha);
+            viewModelPrancha.Pranchas = pranchaController.GetPrancha();
+
+            //var viewModel = (PranchaViewModel)parameter;
+            //viewModel.Pranchas.Remove(viewModel.PranchaSelecionada);
+            //viewModel.PranchaSelecionada = viewModel.Pranchas.FirstOrDefault();
         }
     }
 }
+
