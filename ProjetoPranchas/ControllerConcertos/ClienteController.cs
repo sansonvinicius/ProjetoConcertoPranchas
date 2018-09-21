@@ -11,7 +11,9 @@ namespace ControllerConcertos
 {
     public class ClienteController 
     {
-        public  void InserirCliente(Cliente cliente)
+
+
+        public void InserirCliente(Cliente cliente)
         {
             ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             contexto.ClienteSet.Add(cliente);
@@ -19,11 +21,6 @@ namespace ControllerConcertos
 
         }
 
-       public List<Cliente> ListarTodosClientes()
-        {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
-            return contexto.ClienteSet.ToList();
-        }
 
         public ObservableCollection<Cliente> GetCliente()
         {
@@ -40,13 +37,16 @@ namespace ControllerConcertos
 
         }
 
-        void ExcluirCliente(int Id_Cliente)
+        public void ExcluirCliente(int Id_Cliente)
         {
+            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+
             Cliente cExcluir = BuscarClientePorId(Id_Cliente);
+            cExcluir = contexto.ClienteSet.Where(c => c.Id_Cliente == cExcluir.Id_Cliente).FirstOrDefault();
 
             if (cExcluir != null)
             {
-                ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+
                 contexto.ClienteSet.Remove(cExcluir);
                 contexto.SaveChanges();
 

@@ -22,12 +22,7 @@ namespace ConcertosTelas
         {
             var viewModelCliente = (ClienteViewModel)parameter;
             var cliente = new ModelConcertosEntity.Cliente();
-         //   var maxId = 0;
-          //  if (viewModelCliente.Clientes.Any())
-           // {
-              //  maxId = viewModelCliente.Clientes.Max(p => p.Id_Cliente);
-          //  }
-          //  cliente.Id_Cliente = maxId + 1;
+         
 
             var cw = new TelaAddCliente();
             cw.DataContext = cliente;
@@ -36,10 +31,11 @@ namespace ConcertosTelas
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
             {//Controller
                 ClienteController clienteController = new ClienteController();
-               // viewModelCliente.Clientes = clienteController.InserirCliente(cliente);
+                clienteController.InserirCliente(cliente);
+                viewModelCliente.Clientes = clienteController.GetCliente();
+           
+               
 
-                //viewModelCliente.Clientes.Add(cliente);
-                //viewModelCliente.ClienteSelecionado = cliente;
 
             }
         }
