@@ -1,4 +1,4 @@
-# ProjetoConcertoPranchas
+# ProjetoConsertoPranchas
 Projeto para sistema de controle de conserto de pranchas de surf desenvolvido por Vinicius Sanson e Alisson Hoffmann
 
 O sistema está sendo desenvolvido para o gerenciamento dos consertos de pranchas de surf. As funcionalidades a serem implementadas são:
