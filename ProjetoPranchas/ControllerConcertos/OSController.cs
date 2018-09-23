@@ -32,7 +32,6 @@ namespace ControllerConcertos
 
         public void ExcluirOs(int Id_OS)
         {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
 
             OS oExcluir = BuscarOsPorId(Id_OS);
             oExcluir = contexto.OSSet.Where(o => o.Id_OS == oExcluir.Id_OS).FirstOrDefault();
@@ -46,6 +45,32 @@ namespace ControllerConcertos
 
             }
         }
+
+        public void EditarOS(int Id_OS, OS novosDadosOS)
+        {
+
+            OS osAntiga = BuscarOsPorId(Id_OS);
+
+            if (osAntiga != null)
+            {
+                osAntiga.Descricao = novosDadosOS.Descricao;
+                osAntiga.Valor = novosDadosOS.Valor;
+                osAntiga.Data_Entrada = novosDadosOS.Data_Entrada;
+                osAntiga.Data_Saida = novosDadosOS.Data_Saida;
+                osAntiga.Status = novosDadosOS.Status;
+                osAntiga.Situacao = novosDadosOS.Situacao;
+                osAntiga.ClienteId_Cliente = novosDadosOS.ClienteId_Cliente;
+                osAntiga.PranchaId_Prancha = novosDadosOS.PranchaId_Prancha;
+
+                contexto.Entry(osAntiga).State = System.Data.Entity.EntityState.Modified;
+
+
+                contexto.SaveChanges();
+
+            }
+        }
+
+
 
 
         public List<OsDTO> OSsFinalizadas()

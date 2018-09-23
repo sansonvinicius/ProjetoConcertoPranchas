@@ -1,5 +1,6 @@
 ﻿using ConcertosTelas.Views;
 using ConcertosTelas.ViewsModels;
+using ControllerConcertos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,20 +19,29 @@ namespace ConcertosTelas
 
         public override void Execute(object parameter)
         {
-            var viewModel = (OSViewModel)parameter;
-            var cloneOS = (ModelConcertosEntity.OS)viewModel.OSSelecionada.Clone();
+            var viewModelOS = (OSViewModel)parameter;
+            var cloneOS = (ModelConcertosEntity.OS)viewModelOS.OSSelecionada.Clone();
             var cw = new TelaAddOS();
             cw.DataContext = cloneOS;
             cw.ShowDialog();
 
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
             {
-                viewModel.OSSelecionada.Descricao = cloneOS.Descricao;
-                viewModel.OSSelecionada.Valor = cloneOS.Valor;
-                viewModel.OSSelecionada.Data_Entrada = cloneOS.Data_Entrada;
-                viewModel.OSSelecionada.Data_Saida = cloneOS.Data_Saida;
-                viewModel.OSSelecionada.Status = cloneOS.Status;
-                viewModel.OSSelecionada.Situacao = cloneOS.Situacao;
+
+                OSController osController = new OSController();
+
+                viewModelOS.OSSelecionada.Descricao = cloneOS.Descricao;
+                viewModelOS.OSSelecionada.Valor = cloneOS.Valor;
+                viewModelOS.OSSelecionada.Data_Entrada = cloneOS.Data_Entrada;
+                viewModelOS.OSSelecionada.Data_Saida = cloneOS.Data_Saida;
+                viewModelOS.OSSelecionada.Status = cloneOS.Status;
+                viewModelOS.OSSelecionada.Situacao = cloneOS.Situacao;
+                viewModelOS.OSSelecionada.ClienteId_Cliente = cloneOS.ClienteId_Cliente;
+                viewModelOS.OSSelecionada.PranchaId_Prancha = cloneOS.PranchaId_Prancha;
+
+                osController.EditarOS(viewModelOS.OSSelecionada.Id_OS, viewModelOS.OSSelecionada);
+
+                viewModelOS.OSs = osController.GetOS();
 
 
             }
