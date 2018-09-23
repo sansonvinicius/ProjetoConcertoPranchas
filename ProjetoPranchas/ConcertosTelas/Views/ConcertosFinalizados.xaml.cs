@@ -1,5 +1,8 @@
-﻿using ModelConcertos;
+﻿using ControllerConcertos;
+using ModelConcertos;
 using ModelConcertosEntity;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 
 namespace ConcertosTelas.Views
@@ -10,18 +13,20 @@ namespace ConcertosTelas.Views
     public partial class ConcertosFinalizados : Window
     {
         ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+        OSController oSController = new OSController();
 
         public ConcertosFinalizados()
         {
             InitializeComponent();
+
         }
 
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-
-            //DataGridOS.ItemsSource = List<OS>PesquisarPorStatus(string Status).toList();
+            var query = oSController.OSsFinalizadas();
+            DataGridOS.ItemsSource = query;
 
         }
     }

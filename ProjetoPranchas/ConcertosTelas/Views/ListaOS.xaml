@@ -31,8 +31,8 @@
                     <DataGridTextColumn Header="Saida" Binding="{Binding Data_Saida}"/>
                     <DataGridTextColumn Header="Status" Binding="{Binding Status}"/>
                     <DataGridTextColumn Header="Situacao" Binding="{Binding Situacao}"/>
-                    <DataGridTextColumn Header="Cliente" Binding="{Binding Id_Cliente}"/>
-                    <DataGridTextColumn Header="Prancha"  Binding="{Binding Prancha}"/>
+                    <DataGridTextColumn Header="Cliente" Binding="{Binding Clientes}"/>
+                    <DataGridTextColumn Header="Prancha"  Binding="{Binding iD_Prancha}"/>
                 </DataGrid.Columns>
             </DataGrid>
 

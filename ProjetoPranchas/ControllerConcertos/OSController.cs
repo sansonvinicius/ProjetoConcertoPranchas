@@ -10,22 +10,21 @@ namespace ControllerConcertos
 {
     public class OSController
     {
+        ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+
         public ObservableCollection<OS> GetOS()
         {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             return new ObservableCollection<OS>(contexto.OSSet.ToList());
         }
 
         public void InserirOs(OS os)
         {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             contexto.OSSet.Add(os);
             contexto.SaveChanges();
 
         }
         OS BuscarOsPorId(int Id_Os)
         {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
             return contexto.OSSet.Find(Id_Os);
 
         }
@@ -47,7 +46,25 @@ namespace ControllerConcertos
             }
         }
 
-        
+
+        public List<OS> OSsFinalizadas()
+        {
+
+            //LINQ
+            //var lista = from p in contexto.Person
+            // select p;
+            //esse é o select * from person
+
+            var listaFinalizadas = from os in contexto.OSSet
+                                where os.Status =="Finalizado"
+                                   select os;
+            return listaFinalizadas.ToList();
+          
+        }
+
+
+
+
     }
 }
 

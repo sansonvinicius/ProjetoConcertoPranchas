@@ -21,14 +21,7 @@ namespace ConcertosTelas
         {
             var viewModelOS = (OSViewModel)parameter;
             var os = new ModelConcertosEntity.OS();
-            var maxId = 0;
-
-            if (viewModelOS.OSs.Any())
-            {
-               maxId = viewModelOS.OSs.Max(o => o.Id_OS);
-            }
-            os.Id_OS = maxId + 1;
-
+      
             var ow = new TelaAddOS();
             ow.DataContext = os;
             ow.ShowDialog();

@@ -66,19 +66,51 @@ namespace ModelConcertosEntity
             set { SetField(ref _Situacao, value); }
         }
 
-       /*private string _Cliente;
-        public string Cliente
+        private int _ClienteId_Cliente;
+        public int ClienteId_Cliente
+        {
+            get { return _ClienteId_Cliente; }
+            set { SetField(ref _ClienteId_Cliente, value); }
+        }
+
+        private int _PranchaId_Prancha;
+        public int PranchaId_Prancha
+        {
+            get { return _PranchaId_Prancha; }
+            set { SetField(ref _PranchaId_Prancha, value); }
+        }
+
+        private Cliente _Cliente;
+        public Cliente Cliente
         {
             get { return _Cliente; }
             set { SetField(ref _Cliente, value); }
         }
 
-        private string _Prancha;
-        public string Prancha
+        private Prancha _Prancha;
+        public Prancha Prancha
         {
             get { return _Prancha; }
             set { SetField(ref _Prancha, value); }
-        }*/
+        }
+
+
+        /*private string _Cliente;
+         public string Cliente
+         {
+             get { return _Cliente; }
+             set { SetField(ref _Cliente, value); }
+         }
+
+         private string _Prancha;
+         public string Prancha
+         {
+             get { return _Prancha; }
+             set { SetField(ref _Prancha, value); }
+         }*/
+
+       // public virtual Cliente Cliente { get; set; }
+       // public virtual Prancha Prancha { get; set; }
 
         public object Clone()
         {
@@ -93,12 +125,12 @@ namespace ModelConcertosEntity
          public System.DateTime Data_Entrada { get; set; }
          public System.DateTime Data_Saida { get; set; }
          public string Status { get; set; }
-         public string Situacao { get; set; }*/
+         public string Situacao { get; set; }
          public int ClienteId_Cliente { get; set; }
-         public int PranchaId_Prancha { get; set; }
+         public int PranchaId_Prancha { get; set; }*/
 
-        public virtual Cliente Cliente { get; set; }
-        public virtual Prancha Prancha { get; set; }
-        
+        //public virtual Cliente Cliente { get; set; }
+        // public virtual Prancha Prancha { get; set; }
+
     }
 }

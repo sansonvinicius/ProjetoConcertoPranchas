@@ -1,5 +1,9 @@
-﻿using System;
+﻿using ConcertosTelas.ViewsModels;
+using ControllerConcertos;
+using ModelConcertosEntity;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,10 +23,28 @@ namespace ConcertosTelas.Views
     /// </summary>
     public partial class TelaAddOS : Window
     {
+
         public TelaAddOS()
         {
             InitializeComponent();
+            PreencherCombobox();
+
         }
+        public List<Cliente> ClienteOS { get; set; }
+
+        private void PreencherCombobox()
+        {
+            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+            var item = contexto.ClienteSet.ToList();
+            ClienteOS = item;
+            DataContext = ClienteOS;
+
+        }
+
+
+
+
+
         private void btnSalvarOS_Click(object sender, RoutedEventArgs e)
         {
             AdicionarOS cvm = DataContext as AdicionarOS;
@@ -34,5 +56,7 @@ namespace ConcertosTelas.Views
             this.Close();
         }
     }
+
+
 }
 

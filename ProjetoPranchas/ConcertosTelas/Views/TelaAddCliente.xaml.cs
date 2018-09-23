@@ -1,4 +1,5 @@
 ﻿using ConcertosTelas.ViewsModels;
+using ControllerConcertos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,6 +24,7 @@ namespace ConcertosTelas
         public TelaAddCliente()
         {
             InitializeComponent();
+          
 
          
         }

@@ -1,6 +1,8 @@
-﻿using ControllerConcertos;
+﻿using ConcertosTelas.Views;
+using ControllerConcertos;
 using ModelConcertosEntity;
 using System.Collections.ObjectModel;
+using System.Linq;
 
 namespace ConcertosTelas.ViewsModels
 {
@@ -41,5 +43,7 @@ namespace ConcertosTelas.ViewsModels
             Clientes = clienteController.GetCliente();
          
         }
+
+
     }
 }

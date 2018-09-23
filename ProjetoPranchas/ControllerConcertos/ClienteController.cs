@@ -72,9 +72,21 @@ namespace ControllerConcertos
 
                 contexto.SaveChanges();
 
-
-
             }
+        }
+
+        public ObservableCollection<Cliente> PreencherCombobox()
+        {
+
+            //LINQ
+            //var lista = from p in contexto.Person
+            // select p;
+            //esse é o select * from person
+
+            var listaClientes = from c in contexto.ClienteSet
+                                select c;
+            return new ObservableCollection<Cliente>(listaClientes.ToList());
+         
         }
     }
 }

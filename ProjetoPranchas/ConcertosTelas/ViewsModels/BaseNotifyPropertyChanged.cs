@@ -23,6 +23,11 @@ namespace ConcertosTelas
             {
                 PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
+
+        internal void OnPropertyChanged(string v)
+        {
+            throw new NotImplementedException();
         }
+    }
     }
 
