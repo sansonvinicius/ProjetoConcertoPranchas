@@ -1,27 +1,12 @@
 # ProjetoConcertoPranchas
-Projeto para sistema de controle de concerto de pranchas de surf
-teste
+Projeto para sistema de controle de conserto de pranchas de surf desenvolvido por Vinicius Sanson e Alisson Hoffmann
 
-<Funcionalidades x tela x tabela 30/08>
-crud tela de manutenção
-Buscar cliente > recuperar lista de pranchas cadastradas
+O sistema está sendo desenvolvido para o gerenciamento dos consertos de pranchas de surf. As funcionalidades a serem implementadas são:
 
-txtbox, numero do O.S., status
-tela de consulta de status (cliente) - 
+Cadastrar/Deletar/Editar e Listar Clientes;
+Cadastrar/Deletar/Editar e Listar Pranchas;
+Cadastrar/Deletar/Editar e Listar Ordens de Serviço vinculando a clientes e pranchas já cadastrados;
+Lista de Consertos finalizados e em andamento.
 
-numero O.S., checa status
-historico de cliente (pelo id ou nome)
 
-status > true or false recebida ou entregue
-
-situacao > string 
-
-historico
-
-se status == recebida or andamento
-nao possui historico
-
-consulta
-pintei
-colei
 -----------------------------------------------------------

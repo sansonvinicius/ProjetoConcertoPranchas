@@ -40,6 +40,7 @@ namespace ConcertosTelas.Views
             ClienteController clienteController = new ClienteController();
             var queryCliente = clienteController.ClientesOS();
             ComboBoxCliente.ItemsSource = queryCliente;
+            DataContext = queryCliente;
 
         }
 
@@ -48,6 +49,8 @@ namespace ConcertosTelas.Views
             PranchaController pranchaController = new PranchaController();
             var queryPrancha = pranchaController.PranchasOS();
             ComboBoxPrancha.ItemsSource = queryPrancha;
+            DataContext = queryPrancha;
+
 
         }
 

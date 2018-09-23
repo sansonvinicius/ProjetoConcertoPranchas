@@ -20,8 +20,11 @@ namespace ControllerConcertos
 
         public void InserirOs(OS os)
         {
-            contexto.OSSet.Add(os);
-            contexto.SaveChanges();
+                
+                contexto.OSSet.Add(os);
+                contexto.SaveChanges();
+            
+           
 
         }
         OS BuscarOsPorId(int Id_Os)
