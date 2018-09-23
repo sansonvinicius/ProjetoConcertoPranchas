@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -47,21 +48,56 @@ namespace ControllerConcertos
         }
 
 
-        public List<OS> OSsFinalizadas()
+        public List<OsDTO> OSsFinalizadas()
         {
 
-            //LINQ
-            //var lista = from p in contexto.Person
-            // select p;
-            //esse é o select * from person
 
-            var listaFinalizadas = from os in contexto.OSSet
-                                where os.Status =="Finalizado"
-                                   select os;
-            return listaFinalizadas.ToList();
+
+            var listaFinalizadas = (from os in contexto.OSSet
+                                    where os.Status == "Finalizado"
+                                    select new OsDTO
+                                    {
+                                        Id_OS = os.Id_OS,
+                                        Descricao = os.Descricao,
+                                        Valor = os.Valor,
+                                        Data_Entrada = os.Data_Entrada,
+                                        Data_Saida = os.Data_Saida,
+                                        Status = os.Status,
+                                        Situacao = os.Situacao,
+                                        ClienteId_Cliente = os.ClienteId_Cliente,
+                                        PranchaId_Prancha = os.PranchaId_Prancha,
+
+                                    }).ToList();
+
+
+            return listaFinalizadas;
           
         }
 
+        public List<OsDTO> OSsAndamento()
+        {
+
+
+
+            var listaFinalizadas = (from os in contexto.OSSet
+                                    where os.Status != "Finalizado"
+                                    select new OsDTO
+                                    {
+                                        Id_OS = os.Id_OS,
+                                        Descricao = os.Descricao,
+                                        Valor = os.Valor,
+                                        Data_Entrada = os.Data_Entrada,
+                                        Status = os.Status,
+                                        Situacao = os.Situacao,
+                                        ClienteId_Cliente = os.ClienteId_Cliente,
+                                        PranchaId_Prancha = os.PranchaId_Prancha,
+
+                                    }).ToList();
+
+
+            return listaFinalizadas;
+
+        }
 
 
 

@@ -65,5 +65,13 @@ namespace ConcertosTelas
             concertosFinalizados.Show();
 
         }
+
+
+        private void AndamentoConcertos_Click(object sender, RoutedEventArgs e)
+        {
+            ConcertosAndamento concertosAndamento = new ConcertosAndamento();
+            concertosAndamento.Show();
+
+        }
     }
 }

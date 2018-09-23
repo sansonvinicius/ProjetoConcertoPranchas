@@ -25,8 +25,8 @@
                     <MenuItem x:Name="ListOrdem" Header="Listar"  Click="ListOS_Click"/>
                 </MenuItem>
                 <MenuItem x:Name="MenuConcertos" Header="Concertos">
-                    <MenuItem x:Name="AndamentoConcertos" Header="Andamento"/>
-                    <MenuItem x:Name="HistConcetos" Header="Histórico dos Concertos" Click="HistConcetos_Click"/>
+                    <MenuItem x:Name="AndamentoConcertos" Header="Em andamento" Click="AndamentoConcertos_Click"/>
+                    <MenuItem x:Name="HistConcetos" Header="Finalizados" Click="HistConcetos_Click"/>
                 </MenuItem>
             </Menu>
 
