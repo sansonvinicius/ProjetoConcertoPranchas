@@ -26,22 +26,30 @@ namespace ConcertosTelas.Views
 
         public TelaAddOS()
         {
+            ClienteController clienteController = new ClienteController();
+            PranchaController pranchaController = new PranchaController();
             InitializeComponent();
-            PreencherCombobox();
+            clienteController.ClientesOS();
+            pranchaController.PranchasOS();
+
 
         }
-        public List<Cliente> ClienteOS { get; set; }
 
-        private void PreencherCombobox()
+        private void ComboBoxCliente_Loaded(object sender, RoutedEventArgs e)
         {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
-            var item = contexto.ClienteSet.ToList();
-            ClienteOS = item;
-            DataContext = ClienteOS;
+            ClienteController clienteController = new ClienteController();
+            var queryCliente = clienteController.ClientesOS();
+            ComboBoxCliente.ItemsSource = queryCliente;
 
         }
 
+        private void ComboBoxPrancha_Loaded(object sender, RoutedEventArgs e)
+        {
+            PranchaController pranchaController = new PranchaController();
+            var queryPrancha = pranchaController.PranchasOS();
+            ComboBoxPrancha.ItemsSource = queryPrancha;
 
+        }
 
 
 

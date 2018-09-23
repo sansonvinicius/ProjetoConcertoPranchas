@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         xmlns:viewmodel="clr-namespace:ConcertosTelas.ViewsModels" 
         mc:Ignorable="d"
-        Title="TelaAddOS" Height="500" Width="800">
+        Title="TelaAddOS" Height="500" Width="800" >
 
     <Viewbox>
         <Grid Height="451" Width="774">
@@ -23,8 +23,8 @@
             <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="39" Margin="104,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Text="{Binding Descricao}"/>
             <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="104,102,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Text="{Binding Valor}"/>
             <TextBox x:Name="txtSituacao" HorizontalAlignment="Left" Height="23" Margin="104,251,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Text="{Binding Situacao}"/>
-            <ComboBox x:Name="ComboBoxPrancha" HorizontalAlignment="Left" Margin="105,292,0,0" VerticalAlignment="Top" Width="135" IsSynchronizedWithCurrentItem="False"/>
-            <ComboBox x:Name="ComboBoxCliente"  ItemsSource="{Binding ClienteOS}" DisplayMemberPath="Id_Cliente" HorizontalAlignment="Left" Margin="105,324,0,0" VerticalAlignment="Top" Width="135" />
+            <ComboBox x:Name="ComboBoxPrancha" Loaded ="ComboBoxPrancha_Loaded"  ItemsSource="{Binding ListaPranchaOS}" DisplayMemberPath="Id_Prancha" HorizontalAlignment="Left" Margin="105,292,0,0" VerticalAlignment="Top" Width="135" />
+            <ComboBox x:Name="ComboBoxCliente" Loaded ="ComboBoxCliente_Loaded"  ItemsSource="{Binding ListaClienteOS}" DisplayMemberPath="Id_Cliente" HorizontalAlignment="Left" Margin="105,324,0,0" VerticalAlignment="Top" Width="135"/>
 
             <Button x:Name="btnSalvarOS"  HorizontalAlignment="Left" Margin="105,368,0,0" VerticalAlignment="Top" Width="75" CommandParameter="{Binding}" Command="{Binding AdicionarOS}" Content="Adicionar"  Click="btnSalvarOS_Click"/>
             <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="267,369,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>

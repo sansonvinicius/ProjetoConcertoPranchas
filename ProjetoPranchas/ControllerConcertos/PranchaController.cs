@@ -71,6 +71,22 @@ namespace ControllerConcertos
             }
         }
 
+        public List<PranchaDTO> PranchasOS()
+        {
+
+
+
+            var ListaPranchasOS = (from p in contexto.PranchaSet
+                                   select new PranchaDTO
+                                   {
+                                       Id_Prancha = p.Id_Prancha,
+                                   }).ToList();
+
+
+            return ListaPranchasOS;
+
+        }
+
 
     }
 }

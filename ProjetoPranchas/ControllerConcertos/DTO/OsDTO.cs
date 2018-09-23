@@ -8,6 +8,7 @@ namespace ControllerConcertos
 {
     public class OsDTO
     {
+        //Classe criada pois o visual studio não estava deixando fazer as consultas usando as variáveis de OS
         public int Id_OS { get; set; }
         public string Descricao { get; set; }
         public decimal Valor { get; set; }

@@ -75,18 +75,20 @@ namespace ControllerConcertos
             }
         }
 
-        public ObservableCollection<Cliente> PreencherCombobox()
+        public List<ClienteDTO> ClientesOS()
         {
 
-            //LINQ
-            //var lista = from p in contexto.Person
-            // select p;
-            //esse é o select * from person
 
-            var listaClientes = from c in contexto.ClienteSet
-                                select c;
-            return new ObservableCollection<Cliente>(listaClientes.ToList());
-         
+
+            var ListaClientesOS = (from c in contexto.ClienteSet
+                                    select new ClienteDTO
+                                    {
+                                        Id_Cliente = c.Id_Cliente,
+                                    }).ToList();
+
+
+            return ListaClientesOS;
+
         }
     }
 }
