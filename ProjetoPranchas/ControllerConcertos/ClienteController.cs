@@ -74,10 +74,8 @@ namespace ControllerConcertos
 
             }
         }
-
-        public List<ClienteDTO> ClientesOS()
-        {
-
+    
+        public List<ClienteDTO> ClientesOS() {
 
 
             var ListaClientesOS = (from c in contexto.ClienteSet
@@ -85,10 +83,29 @@ namespace ControllerConcertos
                                     {
                                         Id_Cliente = c.Id_Cliente,
                                     }).ToList();
+            
+
+                return ListaClientesOS;
+            }
+
+        public void PassarIdCliente(int Id_Cliente, OS ClienteOSId)
+        {
+            Cliente IdCliente = BuscarClientePorId(Id_Cliente);
+
+            if (IdCliente != null)
+            {
+                IdCliente.Id_Cliente = ClienteOSId.ClienteId_Cliente;
+               
+
+                contexto.Entry(IdCliente).State = System.Data.Entity.EntityState.Modified;
 
 
-            return ListaClientesOS;
+                contexto.SaveChanges();
+
+            }
 
         }
+
     }
-}
+    }
+

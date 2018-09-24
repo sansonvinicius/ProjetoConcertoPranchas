@@ -23,11 +23,12 @@ namespace ConcertosTelas.Views
     /// </summary>
     public partial class TelaAddOS : Window
     {
+        ClienteController clienteController = new ClienteController();
+        PranchaController pranchaController = new PranchaController();
 
         public TelaAddOS()
         {
-            ClienteController clienteController = new ClienteController();
-            PranchaController pranchaController = new PranchaController();
+            
             InitializeComponent();
             clienteController.ClientesOS();
             pranchaController.PranchasOS();
@@ -35,7 +36,7 @@ namespace ConcertosTelas.Views
 
         }
 
-        private void ComboBoxCliente_Loaded(object sender, RoutedEventArgs e)
+        public void ComboBoxCliente_Loaded(object sender, RoutedEventArgs e)
         {
             ClienteController clienteController = new ClienteController();
             var queryCliente = clienteController.ClientesOS();
@@ -58,6 +59,7 @@ namespace ConcertosTelas.Views
 
         private void btnSalvarOS_Click(object sender, RoutedEventArgs e)
         {
+         
             AdicionarOS cvm = DataContext as AdicionarOS;
             DialogResult = true;
         }
@@ -65,6 +67,11 @@ namespace ConcertosTelas.Views
         {
             TelaAddOS Voltar = new TelaAddOS();
             this.Close();
+        }
+
+        private void ComboBoxCliente_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var item = ComboBoxCliente.SelectedItem as ClienteDTO;
         }
     }
 

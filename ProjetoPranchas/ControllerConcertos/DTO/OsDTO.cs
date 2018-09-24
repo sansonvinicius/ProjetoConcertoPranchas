@@ -16,8 +16,8 @@ namespace ControllerConcertos
         public DateTime? Data_Saida { get; set; }
         public string Status { get; set; }
         public string Situacao { get; set; }
-        public int? PranchaId_Prancha { get; set; }
-        public int? ClienteId_Cliente { get; set; }
+        public string Nome { get; set; }
+        public string Marca { get; set; }
 
 
 

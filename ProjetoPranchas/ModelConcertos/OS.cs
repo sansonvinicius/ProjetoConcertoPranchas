@@ -94,23 +94,8 @@ namespace ModelConcertosEntity
             set { SetField(ref _Prancha, value); }
         }
 
-
-        /*private string _Cliente;
-         public string Cliente
-         {
-             get { return _Cliente; }
-             set { SetField(ref _Cliente, value); }
-         }
-
-         private string _Prancha;
-         public string Prancha
-         {
-             get { return _Prancha; }
-             set { SetField(ref _Prancha, value); }
-         }*/
-
-       // public virtual Cliente Cliente { get; set; }
-       // public virtual Prancha Prancha { get; set; }
+      // public virtual Cliente Cliente { get; set; }
+      // public virtual Prancha Prancha { get; set; }
 
         public object Clone()
         {

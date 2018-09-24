@@ -22,7 +22,7 @@ namespace ControllerConcertos
         {
                 
                 contexto.OSSet.Add(os);
-                contexto.SaveChanges();
+                //contexto.SaveChanges();
             
            
 
@@ -82,20 +82,23 @@ namespace ControllerConcertos
 
 
             var listaFinalizadas = (from os in contexto.OSSet
-                                    where os.Status == "Finalizado"
-                                    select new OsDTO
-                                    {
-                                        Id_OS = os.Id_OS,
-                                        Descricao = os.Descricao,
-                                        Valor = os.Valor,
-                                        Data_Entrada = os.Data_Entrada,
-                                        Data_Saida = os.Data_Saida,
-                                        Status = os.Status,
-                                        Situacao = os.Situacao,
-                                        ClienteId_Cliente = os.ClienteId_Cliente,
-                                        PranchaId_Prancha = os.PranchaId_Prancha,
+                                  join p in contexto.PranchaSet on os.PranchaId_Prancha equals p.Id_Prancha
+                                  join c in contexto.ClienteSet on os.ClienteId_Cliente equals c.Id_Cliente
+                                  where os.Status == "Finalizado"
+                                  select new OsDTO
+                                  {
+                                      Id_OS = os.Id_OS,
+                                      Descricao = os.Descricao,
+                                      Valor = os.Valor,
+                                      Data_Entrada = os.Data_Entrada,
+                                      Data_Saida = os.Data_Saida,
+                                      Status = os.Status,
+                                      Situacao = os.Situacao,
+                                      Nome = c.Nome,
+                                      Marca = p.Marca,
 
-                                    }).ToList();
+                                  }).ToList();
+
 
 
             return listaFinalizadas;
@@ -107,7 +110,9 @@ namespace ControllerConcertos
 
 
 
-            var listaFinalizadas = (from os in contexto.OSSet
+            var listaAndamento = (from os in contexto.OSSet
+                                    join p in contexto.PranchaSet on os.PranchaId_Prancha equals p.Id_Prancha
+                                    join c in contexto.ClienteSet on os.ClienteId_Cliente equals c.Id_Cliente
                                     where os.Status != "Finalizado"
                                     select new OsDTO
                                     {
@@ -117,13 +122,13 @@ namespace ControllerConcertos
                                         Data_Entrada = os.Data_Entrada,
                                         Status = os.Status,
                                         Situacao = os.Situacao,
-                                        ClienteId_Cliente = os.ClienteId_Cliente,
-                                        PranchaId_Prancha = os.PranchaId_Prancha,
+                                        Nome = c.Nome,
+                                        Marca = p.Marca,
 
                                     }).ToList();
 
 
-            return listaFinalizadas;
+            return listaAndamento;
 
         }
 
