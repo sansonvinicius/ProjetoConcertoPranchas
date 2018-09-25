@@ -47,12 +47,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ClienteController.cs" />
+    <Compile Include="Controllers\ClienteController.cs" />
     <Compile Include="DTO\PranchaDTO.cs" />
-    <Compile Include="OSController.cs" />
+    <Compile Include="Controllers\OSController.cs" />
     <Compile Include="DTO\ClienteDTO .cs" />
     <Compile Include="DTO\OsDTO.cs" />
-    <Compile Include="PranchaController.cs" />
+    <Compile Include="Controllers\PranchaController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

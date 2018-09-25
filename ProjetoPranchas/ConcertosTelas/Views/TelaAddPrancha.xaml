@@ -5,10 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         mc:Ignorable="d"
-        Title="TelaAddPrancha" Height="350" Width="800">
+        Title="Adicionar Prancha" Height="350" Width="600">
     <Viewbox>
-        <Grid Height="319" Width="723">
-            <Label Content="Prancha:" HorizontalAlignment="Left" Margin="262,10,0,0" VerticalAlignment="Top" Height="41" Width="153" FontSize="20" RenderTransformOrigin="1.673,0.463" />
+        <Grid Height="319" Width="479">
+            <Label Content="Insira os dados da prancha:" HorizontalAlignment="Left" Margin="166,5,0,0" VerticalAlignment="Top" Height="41" Width="249" FontSize="20" RenderTransformOrigin="1.673,0.463" />
             <Label Content="Modelo:" HorizontalAlignment="Left" Margin="40,57,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
             <Label Content="Marca:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="42,95,0,0"/>
             <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>

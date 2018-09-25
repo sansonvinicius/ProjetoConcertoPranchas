@@ -1,12 +1,12 @@
-﻿<Window x:Class="ConcertosTelas.Views.ConcertosFinalizados"
+﻿<Window x:Class="ConcertosTelas.Views.ConsultaCliente"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Conserttos Finalizados" Height="450" Width="1200"
+        Title="Consulta Clientes" Height="450" Width="800"
         Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="DataGridOS" HorizontalAlignment="Left" Height="399" Margin="10,10,0,0" VerticalAlignment="Top" Width="1172"/>
+        <DataGrid x:Name="DataGridConsultaCliente" HorizontalAlignment="Left" Height="399" Margin="24,10,0,0" VerticalAlignment="Top" Width="758"/>
     </Grid>
 </Window>

@@ -4,9 +4,9 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="ConcertosAndamento" Height="450" Width="800"
+        Title="Consertos em Andamento" Height="450" Width="1000"
         Loaded="Window_Loaded">
     <Grid>
-        <DataGrid x:Name="DataGridOSAndamento" HorizontalAlignment="Left" Height="399" Margin="24,10,0,0" VerticalAlignment="Top" Width="758"/>
+        <DataGrid x:Name="DataGridOSAndamento" HorizontalAlignment="Left" Height="385" VerticalAlignment="Top" Width="968" Margin="14,10,0,0"/>
     </Grid>
 </Window>

@@ -25,7 +25,7 @@ namespace ModelConcertosEntity
             get { return _Id_Cliente; }
             set { SetField(ref _Id_Cliente, value); }
         }
-
+        
         private string _Nome;
         public string Nome
         {
@@ -69,16 +69,6 @@ namespace ModelConcertosEntity
         }
 
 
-
-
-        /*public int Id_Cliente { get; set; }
-        public string Nome { get; set; }
-        public string Sobrenome { get; set; }
-        public string Email { get; set; }
-        public string Cpf { get; set; }
-        public string Telefone { get; set; }
-        public string Endereco { get; set; }*/
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
          public virtual ICollection<OS> OS { get; set; }
 
@@ -108,6 +98,8 @@ namespace ModelConcertosEntity
             PropertyChanged?.Invoke(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
         }
     }
+
+
 
    
 

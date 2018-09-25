@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertosTelas"
         mc:Ignorable="d"
-        Title="AddCliente" Height="350" Width="800
+        Title="Adicionar Cliente" Height="350" Width="800
         ">
     <Viewbox>
         <Grid Height="325" Width="574">
@@ -28,7 +28,7 @@
                 <Label Content="Endereço:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
             </Label>
 
-            <Label Content="Clientes:" HorizontalAlignment="Left" Margin="222,0,0,0" VerticalAlignment="Top" Height="50" Width="171" FontSize="20"/>
+            <Label Content="Insira os dados do cliente:" HorizontalAlignment="Left" Margin="145,0,0,0" VerticalAlignment="Top" Height="50" Width="270" FontSize="20"/>
 
             <TextBox x:Name="txtNome" HorizontalAlignment="Left" Height="23" Margin="104,57,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="347" Text="{Binding Nome}"/>
             <TextBox x:Name="txtSobrenome" HorizontalAlignment="Left" Height="23" Margin="103,95,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="348" Text="{Binding Sobrenome}"/>

@@ -20,10 +20,16 @@ namespace ControllerConcertos
         }
         public void InserirPrancha(Prancha prancha)
         {
-            ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
+            try { 
             contexto.PranchaSet.Add(prancha);
             contexto.SaveChanges();
-
+            }catch{
+                prancha.Modelo = null;
+                prancha.Marca  = null;
+                prancha.Medida= null;
+                prancha.Cor= null;
+                prancha.QtdQuilhas = 0;
+            }
         }
         Prancha BuscarPranchaPorId(int Id_Prancha)
         {
@@ -80,6 +86,9 @@ namespace ControllerConcertos
                                    select new PranchaDTO
                                    {
                                        Id_Prancha = p.Id_Prancha,
+                                       Marca = p.Marca,
+                                       Modelo = p.Modelo,
+                                       Cor = p.Cor
                                    }).ToList();
 
 

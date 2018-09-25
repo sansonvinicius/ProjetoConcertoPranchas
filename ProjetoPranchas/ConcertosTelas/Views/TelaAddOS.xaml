@@ -6,32 +6,32 @@
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         xmlns:viewmodel="clr-namespace:ConcertosTelas.ViewsModels" 
         mc:Ignorable="d"
-        Title="TelaAddOS" Height="500" Width="800" >
+        Title="Adicionar Ordem de Serviço" Height="500" Width="800" >
 
     <Viewbox>
-        <Grid Height="451" Width="774">
-            <Label Content="Ordem de Serviço:" HorizontalAlignment="Left" Margin="52,7,0,0" VerticalAlignment="Top" Height="41" Width="153" FontSize="18"/>
+        <Grid Height="451" Width="531">
+            <Label Content="Insira os dados da Ordem de Serviço:" HorizontalAlignment="Left" Margin="129,10,0,0" VerticalAlignment="Top" Height="41" Width="338" FontSize="18"/>
             <Label Content="Descrição:" HorizontalAlignment="Left" Margin="40,53,0,0" VerticalAlignment="Top" HorizontalContentAlignment="Center"/>
             <Label Content="Valor:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="52,101,0,0"/>
             <Label HorizontalAlignment="Left" Margin="42,104,0,0" VerticalAlignment="Top"/>
-            <Label Content="Entrada" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="40,133,0,0"/>
-            <Label Content="Saída:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="42,173,0,0"/>
+            <Label Content="Início:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="52,135,0,0"/>
+            <Label Content="Termino :" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="42,170,0,0"/>
             <Label HorizontalAlignment="Left" Margin="23,212,0,0" VerticalAlignment="Top"/>
             <Label Content="Status" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" RenderTransformOrigin="0.187,0.557" Margin="44,210,0,0"/>
-            <Label Content="Situação:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="37,249,0,0"/>
+            <Label Content="Andamento:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="26,248,0,0"/>
 
             <TextBox x:Name="txtDescricao" HorizontalAlignment="Left" Height="39" Margin="104,56,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Text="{Binding Descricao}"/>
             <TextBox x:Name="txtValor" HorizontalAlignment="Left" Height="23" Margin="104,102,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Text="{Binding Valor}"/>
             <TextBox x:Name="txtSituacao" HorizontalAlignment="Left" Height="23" Margin="104,251,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="380" Text="{Binding Situacao}"/>
-            <ComboBox x:Name="ComboBoxPrancha" Loaded ="ComboBoxPrancha_Loaded"  ItemsSource="{Binding queryPrancha}" DisplayMemberPath="Id_Prancha"  HorizontalAlignment="Left" Margin="105,292,0,0" VerticalAlignment="Top" Width="135"  Text="{Binding ListaPranchaOS}" />
-            <ComboBox x:Name="ComboBoxCliente" Loaded ="ComboBoxCliente_Loaded"  ItemsSource="{Binding queryCliente}" SelectedValuePath="ClienteId_Cliente" DisplayMemberPath="Id_Cliente" SelectionChanged="ComboBoxCliente_SelectionChanged" HorizontalAlignment="Left" Margin="105,324,0,0" VerticalAlignment="Top" Width="135" Text="{Binding ListaClienteOS}"/>
+            <TextBox x:Name="TxtPrancha" HorizontalAlignment="Left" Height="23" Margin="104,291,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="101" Text="{Binding PranchaId_Prancha}"/>
+            <TextBox x:Name="TxtCliente" HorizontalAlignment="Left" Height="23" Margin="105,323,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="100" Text="{Binding ClienteId_Cliente}"/>
 
             <Button x:Name="btnSalvarOS"  HorizontalAlignment="Left" Margin="105,368,0,0" VerticalAlignment="Top" Width="75" CommandParameter="{Binding}" Command="{Binding AdicionarOS}" Content="Adicionar"  Click="btnSalvarOS_Click"/>
             <Button x:Name="btnVoltar" Content="Votar" HorizontalAlignment="Left" Margin="267,369,0,0" VerticalAlignment="Top" Width="75" Click="btnVoltar_Click"/>
-            <Label Content="Prancha" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="40,288,0,0"/>
-            <Label Content="Cliente" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="41,320,0,0"/>
+            <Label Content="Cod Prancha:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="10,288,0,0" Width="89" Height="32"/>
+            <Label Content="Cod Cliente:" HorizontalAlignment="Left" VerticalAlignment="Top" HorizontalContentAlignment="Center" Margin="19,320,0,0"/>
             <DatePicker x:Name="TxtEntrada" HorizontalAlignment="Left" Margin="102,135,0,0" VerticalAlignment="Top"  SelectedDate="{Binding Mode=TwoWay, Path=Data_Entrada, UpdateSourceTrigger=PropertyChanged, StringFormat=\{0:d\}}" FirstDayOfWeek="Monday" IsTodayHighlighted="True" />
-            <DatePicker x:Name="txtSaida" HorizontalAlignment="Left" Margin="102,175,0,0" VerticalAlignment="Top"  SelectedDate="{Binding Mode=TwoWay, Path=Data_Saida, UpdateSourceTrigger=PropertyChanged, StringFormat=\{0:d\}}" Width="138"/>
+            <DatePicker x:Name="txtSaida" HorizontalAlignment="Left" Margin="102,172,0,0" VerticalAlignment="Top"  SelectedDate="{Binding Mode=TwoWay, Path=Data_Saida, UpdateSourceTrigger=PropertyChanged, StringFormat=\{0:d\}}" Width="138"/>
             <ComboBox x:Name="ComboBoxStatus" HorizontalAlignment="Left" Margin="105,210,0,0" VerticalAlignment="Top" Width="135"  Text="{Binding Status}">
                 <ComboBoxItem/>
                 <ComboBoxItem Content="Recebido"/>
@@ -40,6 +40,8 @@
 
 
             </ComboBox>
+            <Button x:Name="ConsultaPranchas" Content="Consultar Pranchas" HorizontalAlignment="Left" Margin="219,291,0,0" VerticalAlignment="Top" Width="111" Click="ConsultaPranchas_Click"/>
+            <Button x:Name="ConsultaClientes" Content="Consultar Clientes" HorizontalAlignment="Left" Margin="219,323,0,0" VerticalAlignment="Top" Width="111" RenderTransformOrigin="0.402,0.464" Click="ConsultaClientes_Click"/>
         </Grid>
     </Viewbox>
 </Window>

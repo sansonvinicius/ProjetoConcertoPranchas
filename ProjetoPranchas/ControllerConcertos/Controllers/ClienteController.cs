@@ -17,11 +17,21 @@ namespace ControllerConcertos
 
         public void InserirCliente(Cliente cliente)
         {
-            contexto.ClienteSet.Add(cliente);
-            contexto.SaveChanges();
 
+            try {
+                contexto.ClienteSet.Add(cliente);
+                contexto.SaveChanges();
+            }
+            catch {
+
+                cliente.Nome = null;
+                cliente.Sobrenome = null;
+                cliente.Cpf = null;
+                cliente.Email = null;
+                cliente.Endereco = null;
+                cliente.Telefone=null;
+            }
         }
-
 
         public ObservableCollection<Cliente> GetCliente()
         {
@@ -37,19 +47,18 @@ namespace ControllerConcertos
         }
 
         public void ExcluirCliente(int Id_Cliente)
-        {
+        { 
+                Cliente cExcluir = BuscarClientePorId(Id_Cliente);
+                cExcluir = contexto.ClienteSet.Where(c => c.Id_Cliente == cExcluir.Id_Cliente).FirstOrDefault();
+           
+                if (cExcluir != null)
+                {
 
-            Cliente cExcluir = BuscarClientePorId(Id_Cliente);
-            cExcluir = contexto.ClienteSet.Where(c => c.Id_Cliente == cExcluir.Id_Cliente).FirstOrDefault();
-
-            if (cExcluir != null)
-            {
-
-                contexto.ClienteSet.Remove(cExcluir);
-                contexto.SaveChanges();
+                    contexto.ClienteSet.Remove(cExcluir);
+                    contexto.SaveChanges();
 
 
-            }
+                }
         }
 
         public void EditarCliente(int Id_Cliente, Cliente novosDadosCliente)
@@ -79,33 +88,21 @@ namespace ControllerConcertos
 
 
             var ListaClientesOS = (from c in contexto.ClienteSet
-                                    select new ClienteDTO
-                                    {
-                                        Id_Cliente = c.Id_Cliente,
-                                    }).ToList();
-            
+                                   select new ClienteDTO
+                                   {
+                                       Id_Cliente = c.Id_Cliente,
+                                       Nome = c.Nome,
+                                       Sobrenome = c.Sobrenome,
+                                       Email = c.Email,
+                                    })  .ToList();
 
                 return ListaClientesOS;
-            }
 
-        public void PassarIdCliente(int Id_Cliente, OS ClienteOSId)
-        {
-            Cliente IdCliente = BuscarClientePorId(Id_Cliente);
-
-            if (IdCliente != null)
-            {
-                IdCliente.Id_Cliente = ClienteOSId.ClienteId_Cliente;
-               
-
-                contexto.Entry(IdCliente).State = System.Data.Entity.EntityState.Modified;
-
-
-                contexto.SaveChanges();
+           
 
             }
 
-        }
 
     }
-    }
+}
 

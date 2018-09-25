@@ -34,9 +34,6 @@ namespace ConcertosTelas.ViewsModels
         }
 
 
-
-
-
         private ModelConcertosEntity.Prancha _pranchaSelecionada;
         public ModelConcertosEntity.Prancha PranchaSelecionada
         {

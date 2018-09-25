@@ -17,7 +17,9 @@ namespace ControllerConcertos
         public string Status { get; set; }
         public string Situacao { get; set; }
         public string Nome { get; set; }
+        public string Sobrenome { get; set; }
         public string Marca { get; set; }
+        public string Modelo { get; set; }
 
 
 

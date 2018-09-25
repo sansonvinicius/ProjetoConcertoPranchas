@@ -24,16 +24,21 @@ namespace ConcertosTelas
         public TelaAddCliente()
         {
             InitializeComponent();
-          
 
-         
+
+
+
         }
 
         private void btnSalvarCliente_Click(object sender, RoutedEventArgs e)
         {
             AdicionarCliente cvm = DataContext as AdicionarCliente;
             DialogResult = true;
+
         }
+
+
+
 
         private void btnVoltar_Click(object sender, RoutedEventArgs e)
         {

@@ -27,7 +27,7 @@ namespace ConcertosTelas
 
             if (cw.DialogResult.HasValue && cw.DialogResult.Value)
             {
-
+                TelaAddOS telaAddOS = new TelaAddOS();
                 OSController osController = new OSController();
 
                 viewModelOS.OSSelecionada.Descricao = cloneOS.Descricao;
@@ -38,8 +38,17 @@ namespace ConcertosTelas
                 viewModelOS.OSSelecionada.Situacao = cloneOS.Situacao;
                 viewModelOS.OSSelecionada.ClienteId_Cliente = cloneOS.ClienteId_Cliente;
                 viewModelOS.OSSelecionada.PranchaId_Prancha = cloneOS.PranchaId_Prancha;
-
                 osController.EditarOS(viewModelOS.OSSelecionada.Id_OS, viewModelOS.OSSelecionada);
+
+                if (viewModelOS.OSSelecionada.PranchaId_Prancha == 0)
+                {
+                    telaAddOS.btnSalvarOS.DataContext = null;
+                }
+                if (viewModelOS.OSSelecionada.ClienteId_Cliente == 0)
+                {
+                    telaAddOS.btnSalvarOS.DataContext = null;
+                }
+
 
                 viewModelOS.OSs = osController.GetOS();
 

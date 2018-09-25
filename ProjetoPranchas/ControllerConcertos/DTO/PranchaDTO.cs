@@ -11,7 +11,10 @@ namespace ControllerConcertos
         //Classe criada pois o visual studio não estava deixando fazer as consultas usando as variáveis de Cliente
         public int Id_Prancha { get; set; }
         public string Marca { get; set; }
-      
+        public string Modelo { get; set; }
+        public string Cor { get; set; }
+
+
 
 
 

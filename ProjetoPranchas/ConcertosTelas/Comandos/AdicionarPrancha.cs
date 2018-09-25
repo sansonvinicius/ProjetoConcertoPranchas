@@ -33,8 +33,7 @@ namespace ConcertosTelas
                 pranchaController.InserirPrancha(prancha);
                 viewModelPrancha.Pranchas = pranchaController.GetPrancha();
 
-                //viewModelPrancha.Pranchas.Add(prancha);
-                //viewModelPrancha.PranchaSelecionada = prancha;
+         
                 
             }
         }

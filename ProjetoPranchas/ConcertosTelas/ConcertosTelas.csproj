@@ -75,6 +75,12 @@
     <Compile Include="ViewsModels\ClienteViewModel.cs" />
     <Compile Include="ViewsModels\OSViewModel.cs" />
     <Compile Include="ViewsModels\PranchaViewModel.cs" />
+    <Compile Include="Views\ConsultaPrancha.xaml.cs">
+      <DependentUpon>ConsultaPrancha.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ConsultaCliente.xaml.cs">
+      <DependentUpon>ConsultaCliente.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ConcertosAndamento.xaml.cs">
       <DependentUpon>ConcertosAndamento.xaml</DependentUpon>
     </Compile>
@@ -96,6 +102,14 @@
     <Compile Include="Views\TelaAddOS.xaml.cs">
       <DependentUpon>TelaAddOS.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\ConsultaPrancha.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\ConsultaCliente.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Views\ConcertosAndamento.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -21,6 +21,7 @@ namespace ConcertosTelas
         {
             var viewModelOS = (OSViewModel)parameter;
             var os = new ModelConcertosEntity.OS();
+            var c = new ModelConcertosEntity.Cliente();
       
             var ow = new TelaAddOS();
             ow.DataContext = os;
@@ -30,6 +31,17 @@ namespace ConcertosTelas
             {
                 OSController osController = new OSController();
                 osController.InserirOs(os);
+                if(os.PranchaId_Prancha == 0)
+                {
+                    TelaAddOS telaAddOS = new TelaAddOS();
+                    telaAddOS.btnSalvarOS.DataContext = null;
+                }
+                if (os.ClienteId_Cliente == 0)
+                {
+                    TelaAddOS telaAddOS = new TelaAddOS();
+                    telaAddOS.btnSalvarOS.DataContext = null;
+                }
+
                 viewModelOS.OSs = osController.GetOS();
 
                                

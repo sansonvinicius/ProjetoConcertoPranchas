@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Data.Entity;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace ControllerConcertos
     public class OSController
     {
         ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
-
+        
         public ObservableCollection<OS> GetOS()
         {
             return new ObservableCollection<OS>(contexto.OSSet.ToList());
@@ -20,16 +21,32 @@ namespace ControllerConcertos
 
         public void InserirOs(OS os)
         {
-                
-                contexto.OSSet.Add(os);
-                //contexto.SaveChanges();
             
-           
+            try { 
+                contexto.OSSet.Add(os);
+                contexto.SaveChanges();
+            }
+            catch
+            {
+                os.Descricao = null;
+                os.Valor = 0;
+                os.Data_Entrada = null; 
+                os.Data_Saida = null; 
+                os.Status = null; ;
+                os.Situacao = null; ;
+                os.ClienteId_Cliente = 0;
+                os.PranchaId_Prancha = 0; 
+
+            }
+
+
+
+
 
         }
-        OS BuscarOsPorId(int Id_Os)
+        OS BuscarOsPorId(int Id_OS)
         {
-            return contexto.OSSet.Find(Id_Os);
+            return contexto.OSSet.Find(Id_OS);
 
         }
 
@@ -51,29 +68,32 @@ namespace ControllerConcertos
 
         public void EditarOS(int Id_OS, OS novosDadosOS)
         {
-
+           
             OS osAntiga = BuscarOsPorId(Id_OS);
+            try { 
+                if (osAntiga != null)
+                {
+                    osAntiga.Descricao = novosDadosOS.Descricao;
+                    osAntiga.Valor = novosDadosOS.Valor;
+                    osAntiga.Data_Entrada = novosDadosOS.Data_Entrada;
+                    osAntiga.Data_Saida = novosDadosOS.Data_Saida;
+                    osAntiga.Status = novosDadosOS.Status;
+                    osAntiga.Situacao = novosDadosOS.Situacao;
+                    osAntiga.ClienteId_Cliente = novosDadosOS.ClienteId_Cliente;
+                    osAntiga.PranchaId_Prancha = novosDadosOS.PranchaId_Prancha;
 
-            if (osAntiga != null)
-            {
-                osAntiga.Descricao = novosDadosOS.Descricao;
-                osAntiga.Valor = novosDadosOS.Valor;
-                osAntiga.Data_Entrada = novosDadosOS.Data_Entrada;
-                osAntiga.Data_Saida = novosDadosOS.Data_Saida;
-                osAntiga.Status = novosDadosOS.Status;
-                osAntiga.Situacao = novosDadosOS.Situacao;
-                osAntiga.ClienteId_Cliente = novosDadosOS.ClienteId_Cliente;
-                osAntiga.PranchaId_Prancha = novosDadosOS.PranchaId_Prancha;
-
-                contexto.Entry(osAntiga).State = System.Data.Entity.EntityState.Modified;
-
-
-                contexto.SaveChanges();
-
+                    contexto.Entry(osAntiga).State = System.Data.Entity.EntityState.Modified;
+                    contexto.SaveChanges();
+                }
             }
+            catch
+            {
+                novosDadosOS.ClienteId_Cliente = osAntiga.PranchaId_Prancha;
+                novosDadosOS.ClienteId_Cliente = osAntiga.ClienteId_Cliente;
+            }
+
+
         }
-
-
 
 
         public List<OsDTO> OSsFinalizadas()
@@ -91,10 +111,12 @@ namespace ControllerConcertos
                                       Descricao = os.Descricao,
                                       Valor = os.Valor,
                                       Data_Entrada = os.Data_Entrada,
-                                      Data_Saida = os.Data_Saida,
+                                      Data_Saida = os.Data_Entrada,
                                       Status = os.Status,
                                       Situacao = os.Situacao,
                                       Nome = c.Nome,
+                                      Sobrenome = c.Sobrenome,
+                                      Modelo = p.Modelo,
                                       Marca = p.Marca,
 
                                   }).ToList();
@@ -123,6 +145,8 @@ namespace ControllerConcertos
                                         Status = os.Status,
                                         Situacao = os.Situacao,
                                         Nome = c.Nome,
+                                        Sobrenome = c.Sobrenome,
+                                        Modelo = p.Modelo,
                                         Marca = p.Marca,
 
                                     }).ToList();
@@ -131,9 +155,6 @@ namespace ControllerConcertos
             return listaAndamento;
 
         }
-
-
-
     }
 }
 

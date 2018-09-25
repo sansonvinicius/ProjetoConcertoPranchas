@@ -10,12 +10,12 @@ namespace ConcertosTelas.Views
     /// <summary>
     /// Lógica interna para ConcertosFinalizados.xaml
     /// </summary>
-    public partial class ConcertosFinalizados : Window
+    public partial class ConsultaPrancha : Window
     {
         ModelConcertosEntityContainer contexto = new ModelConcertosEntityContainer();
-        OSController oSController = new OSController();
+        PranchaController pranchaController = new PranchaController();
 
-        public ConcertosFinalizados()
+        public ConsultaPrancha()
         {
             InitializeComponent();
 
@@ -25,12 +25,9 @@ namespace ConcertosTelas.Views
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
 
-
-            var query = oSController.OSsFinalizadas();
-            DataGridOS.ItemsSource = query;
+            var query = pranchaController.PranchasOS();
+            DataGridConsultaPrancha.ItemsSource = query;
 
         }
-
-
     }
 }

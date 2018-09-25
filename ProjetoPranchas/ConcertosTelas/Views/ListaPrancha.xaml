@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ConcertosTelas.Views"
         mc:Ignorable="d"
-        Title="ListaPrancha" Height="350" Width="800">
+        Title="Lista de Pranchas" Height="350" Width="500">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -13,9 +13,9 @@
             <RowDefinition Height="9*"/>
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal">
-            <Button Margin="3" Padding="3" Content="Novo" CommandParameter="{Binding}" Command="{Binding AdicionarPrancha}" />
+            <Button Margin="3" Padding="3" Content="Adicionar" CommandParameter="{Binding}" Command="{Binding AdicionarPrancha}" Background="#FF7BDC38" />
             <Button Margin="3" Padding="3" Content="Editar" CommandParameter="{Binding}" Command="{Binding EditarPrancha}"/>
-            <Button Margin="3" Padding="3" Content="Deletar" CommandParameter="{Binding}" Command="{Binding DeletarPrancha}"/>
+            <Button Margin="3" Padding="3" Content="Deletar" CommandParameter="{Binding}" Command="{Binding DeletarPrancha}" Background="#FFEA1B11"/>
         </StackPanel>
         <ScrollViewer Grid.Row="1"
                       HorizontalScrollBarVisibility="Visible"

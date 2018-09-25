@@ -22,7 +22,7 @@ namespace ConcertosTelas
         {
             var viewModelCliente = (ClienteViewModel)parameter;
             var cliente = new ModelConcertosEntity.Cliente();
-         
+
 
             var cw = new TelaAddCliente();
             cw.DataContext = cliente;
@@ -32,15 +32,18 @@ namespace ConcertosTelas
             {//Controller
                 ClienteController clienteController = new ClienteController();
                 clienteController.InserirCliente(cliente);
-                viewModelCliente.Clientes = clienteController.GetCliente();
-           
-               
+               viewModelCliente.Clientes = clienteController.GetCliente();
+
+                    
 
 
+
+
+                }
             }
+
+
         }
-
-
     }
-}
+
 

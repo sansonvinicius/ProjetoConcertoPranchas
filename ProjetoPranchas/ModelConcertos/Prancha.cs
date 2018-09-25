@@ -62,13 +62,6 @@ namespace ModelConcertosEntity
             set { SetField(ref _Medida, value); }
         }
 
-        /* public int Id_Prancha { get; set; }
-         public string Marca { get; set; }
-         public string Modelo { get; set; }
-         public string Cor { get; set; }
-         public int QtdQuilhas { get; set; }
-         public string Medida { get; set; }*/
-
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OS> OS { get; set; }
 
